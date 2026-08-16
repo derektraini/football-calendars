@@ -13,7 +13,7 @@ read or stored.
 - a confirmed kickoff in UTC, or an all-day **Kickoff TBD** placeholder when a
   date is known but no time has been announced
 - stadium/city, broadcaster when published, and a game/source link
-- Ohio State's selected AP or CFP rank when that exact poll is available
+- Ohio State's and its opponent's selected AP or CFP ranks when that exact poll is available
 - for NFL games in Weeks 13–18, a conservative playoff picture: current record,
   conference seed, and only provider-confirmed clinches/eliminations
 

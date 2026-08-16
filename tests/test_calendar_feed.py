@@ -70,6 +70,12 @@ class CalendarFeedTests(unittest.TestCase):
         lines = event_lines(preseason, {}, self.now)
         self.assertIn("SUMMARY:Preseason: Seattle Seahawks at San Francisco 49ers", lines)
 
+    def test_ranked_ohio_state_matchup_labels_both_teams(self) -> None:
+        matchup = Game(**{**self.games[0].__dict__, "opponent_rank": "#8"})
+        lines = event_lines(matchup, {}, self.now)
+        self.assertIn("SUMMARY:#4 Ohio State Buckeyes at #8 Texas Longhorns", lines)
+        self.assertTrue(any("Rankings: Ohio State #4\\; Texas Longhorns #8 (AP Top 25)" in line for line in lines))
+
     def test_incomplete_schedule_fails_closed(self) -> None:
         with self.assertRaisesRegex(ValueError, "Ohio State provider returned an incomplete schedule"):
             require_complete_schedule("Ohio State", self.games[:1], 10)

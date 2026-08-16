@@ -59,6 +59,7 @@ class Game:
     url: str = ""
     neutral: bool = False
     rank: str | None = None
+    opponent_rank: str | None = None
     rank_source: str | None = None
     playoff: str | None = None
 
@@ -211,15 +212,26 @@ def parse_osu_schedule(html: str, year: int) -> list[Game]:
     return games
 
 
-def select_ranking(payload: dict[str, Any], today: date) -> tuple[dict[str, int], str | None]:
+def normalized_team_name(name: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", name.casefold())
+
+
+def select_ranking(payload: dict[str, Any], today: date) -> tuple[dict[str, int], dict[str, int], str | None]:
     """Return only the requested AP/CFP poll; never quietly substitute Coaches."""
     desired = "CFP" if today >= CFP_FIRST_RELEASE.get(today.year, date(today.year, 11, 1)) else "AP"
     for ranking in payload.get("rankings", []):
         name = str(ranking.get("name", ""))
         valid = (desired == "AP" and name == "AP Top 25") or (desired == "CFP" and "College Football Playoff" in name)
         if valid:
-            return ({str(row["team"]["id"]): int(row["current"]) for row in ranking.get("ranks", [])}, name)
-    return {}, None
+            by_id, by_name = {}, {}
+            for row in ranking.get("ranks", []):
+                team, rank = row["team"], int(row["current"])
+                by_id[str(team["id"])] = rank
+                for label in (team.get("displayName"), team.get("location"), team.get("name"), team.get("abbreviation")):
+                    if label:
+                        by_name[normalized_team_name(str(label))] = rank
+            return by_id, by_name, name
+    return {}, {}, None
 
 
 def walk_entries(node: Any) -> Iterable[dict[str, Any]]:
@@ -256,13 +268,16 @@ def playoff_status(team_id: str, standings: dict[str, Any], today: date) -> str 
     return None
 
 
-def enrich(games: list[Game], rankings: dict[str, int], ranking_source: str | None,
+def enrich(games: list[Game], rankings: dict[str, int], rankings_by_name: dict[str, int], ranking_source: str | None,
            standings: dict[str, Any], today: date) -> None:
     for game in games:
         if game.league == "college-football" and rankings:
             rank = rankings.get("194")
             if rank:
                 game.rank, game.rank_source = f"#{rank}", ranking_source
+            opponent_rank = rankings_by_name.get(normalized_team_name(game.opponent))
+            if opponent_rank:
+                game.opponent_rank, game.rank_source = f"#{opponent_rank}", ranking_source
         playoff_window = today <= game.game_date <= today + timedelta(days=28)
         if game.league == "nfl" and game.week and playoff_window:
             week_number = re.search(r"(\d+)$", game.week)
@@ -301,13 +316,13 @@ def event_lines(game: Game, state: dict[str, Any], now: datetime) -> list[str]:
     else:
         sequence, modified = int(old.get("sequence", -1)) + 1, now.strftime("%Y%m%dT%H%M%SZ")
         state[game.uid] = {"fingerprint": fingerprint, "sequence": sequence, "modified": modified}
-    summary = f"{game.opponent} at {game.team}" if game.home_away == "home" else f"{game.team} at {game.opponent}"
+    team_name = f"{game.rank} {game.team}" if game.rank else game.team
+    opponent_name = f"{game.opponent_rank} {game.opponent}" if game.opponent_rank else game.opponent
+    summary = f"{opponent_name} at {team_name}" if game.home_away == "home" else f"{team_name} at {opponent_name}"
     if game.league == "nfl" and game.season_type.casefold() == "preseason":
         summary = f"Preseason: {summary}"
     if game.neutral:
         summary += " (Neutral site)"
-    if game.rank:
-        summary = f"{game.rank} {summary}"
     if not game.time_confirmed:
         summary += " — Kickoff TBD"
     details = [
@@ -315,7 +330,7 @@ def event_lines(game: Game, state: dict[str, Any], now: datetime) -> list[str]:
         f"{game.home_away.title()}{' • Neutral site' if game.neutral else ''}",
         f"Venue: {game.venue}" if game.venue else "",
         f"TV/stream: {', '.join(game.broadcasts)}" if game.broadcasts else "",
-        f"Ranking: {game.rank} ({game.rank_source})" if game.rank else "",
+        f"Rankings: Ohio State {game.rank or 'Unranked'}; {game.opponent} {game.opponent_rank or 'Unranked'} ({game.rank_source})" if game.rank_source else "",
         game.playoff or "",
         "Kickoff is not confirmed; this all-day placeholder will become a timed event when announced." if not game.time_confirmed else "",
         "Source: " + game.url if game.url else "",
@@ -380,10 +395,10 @@ def get_live_games(today: date) -> list[Game]:
         require_complete_schedule(f"NFL provider ({team.name} regular season)", regular_season_games, 17)
         nfl_games.extend(parsed)
     ranking_payload = fetch_json(f"{ESPN}/college-football/rankings")
-    ranks, source = select_ranking(ranking_payload, today)
+    ranks, ranks_by_name, source = select_ranking(ranking_payload, today)
     standings = fetch_json(f"https://site.api.espn.com/apis/v2/sports/football/nfl/standings?season={current_nfl_season(today)}&seasontype=2")
     games = osu + nfl_games
-    enrich(games, ranks, source, standings, today)
+    enrich(games, ranks, ranks_by_name, source, standings, today)
     return games
 
 
