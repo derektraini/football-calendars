@@ -29,14 +29,15 @@ class Team:
     slug: str
     name: str
     league: str
+    color: str
     espn_id: str | None = None
     duration_minutes: int = 195
 
 
 TEAMS = (
-    Team("ohio-state", "Ohio State Buckeyes", "college-football", "194", 210),
-    Team("49ers", "San Francisco 49ers", "nfl", "25"),
-    Team("patriots", "New England Patriots", "nfl", "17"),
+    Team("ohio-state", "Ohio State Buckeyes", "college-football", "#BB0000", "194", 210),
+    Team("49ers", "San Francisco 49ers", "nfl", "#B3995D", "25"),
+    Team("patriots", "New England Patriots", "nfl", "#002244", "17"),
 )
 
 
@@ -352,10 +353,12 @@ def event_lines(game: Game, state: dict[str, Any], now: datetime) -> list[str]:
     return lines + ["END:VEVENT"]
 
 
-def render_calendar(name: str, games: list[Game], state: dict[str, Any], now: datetime) -> str:
+def render_calendar(name: str, games: list[Game], state: dict[str, Any], now: datetime, color: str | None = None) -> str:
     lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Football Calendars//EN", "CALSCALE:GREGORIAN",
              "METHOD:PUBLISH", f"X-WR-CALNAME:{text_value(name)}", "X-WR-TIMEZONE:America/Los_Angeles",
              "X-PUBLISHED-TTL:PT1H"]
+    if color:
+        lines.append(f"COLOR:{color}")
     for game in sorted(games, key=lambda game: (game.game_date, game.provider_id)):
         lines.extend(event_lines(game, state, now))
     lines.append("END:VCALENDAR")
@@ -371,7 +374,7 @@ def write_feeds(games: list[Game], output: Path, state_path: Path, now: datetime
     state = load_state(state_path)
     grouped = {team.slug: [game for game in games if game.team == team.name] for team in TEAMS}
     for team in TEAMS:
-        (output / f"{team.slug}.ics").write_text(render_calendar(team.name, grouped[team.slug], state, now), newline="")
+        (output / f"{team.slug}.ics").write_text(render_calendar(team.name, grouped[team.slug], state, now, team.color), newline="")
     (output / "football.ics").write_text(render_calendar("Football", games, state, now), newline="")
     state_path.parent.mkdir(parents=True, exist_ok=True)
     state_path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")

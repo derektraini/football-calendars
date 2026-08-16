@@ -23,12 +23,17 @@ class CalendarFeedTests(unittest.TestCase):
             state = Path(directory) / "state.json"
             write_feeds(self.games, output, state, self.now)
             expected_counts = {"ohio-state": 1, "49ers": 1, "patriots": 1, "football": 3}
+            expected_colors = {"ohio-state": "#BB0000", "49ers": "#B3995D", "patriots": "#002244"}
             for feed, count in expected_counts.items():
                 text = (output / f"{feed}.ics").read_bytes().decode("utf-8")
                 self.assertTrue(text.startswith("BEGIN:VCALENDAR\r\nVERSION:2.0\r\n"))
                 self.assertTrue(text.endswith("END:VCALENDAR\r\n"))
                 self.assertEqual(text.count("BEGIN:VEVENT"), count)
                 self.assertEqual(text.count("END:VEVENT"), count)
+                if feed in expected_colors:
+                    self.assertIn(f"COLOR:{expected_colors[feed]}", text)
+                else:
+                    self.assertNotIn("COLOR:", text)
                 for physical_line in text.split("\r\n"):
                     self.assertLessEqual(len(physical_line.encode("utf-8")), 75)
 

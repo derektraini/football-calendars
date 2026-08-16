@@ -21,6 +21,21 @@ The NFL block never invents a “win-and-in”, magic number, or clinching scena
 Those require full tiebreaker/scenario data. A definitive clincher is shown only
 when the standings provider supplies one.
 
+## Team calendar colors
+
+Each individual feed includes the standard iCalendar `COLOR` hint. Use these same
+values when selecting a custom calendar color in Apple Calendar:
+
+| Calendar | Team color | Hex |
+| --- | --- | --- |
+| Ohio State | Scarlet | `#BB0000` |
+| 49ers | Gold | `#B3995D` |
+| Patriots | Navy | `#002244` |
+
+Apple Calendar may retain the color you chose locally for an existing subscription;
+that local choice takes precedence over the feed hint. The combined feed deliberately
+has no color because it contains all three teams.
+
 ## Data sources and safeguards
 
 - Ohio State schedule: the official [Ohio State text schedule](https://ohiostatebuckeyes.com/sports/football/schedule/text)

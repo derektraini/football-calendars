@@ -6,6 +6,7 @@ METHOD:PUBLISH
 X-WR-CALNAME:Ohio State Buckeyes
 X-WR-TIMEZONE:America/Los_Angeles
 X-PUBLISHED-TTL:PT1H
+COLOR:#BB0000
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-68dc9697a20f382a@local
 DTSTAMP:20260816T181606Z
