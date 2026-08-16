@@ -1,0 +1,39 @@
+name: Refresh calendars
+
+on:
+  schedule:
+    - cron: '23 17 * * 3'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: refresh-calendars
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/calendar_feed.py --output site
+      - run: python -m unittest discover -s tests -v
+      - name: Commit changed feeds
+        run: |
+          git config user.name 'football-calendar-bot'
+          git config user.email 'football-calendar-bot@users.noreply.github.com'
+          git add site data/feed-state.json
+          git diff --cached --quiet || git commit -m 'Refresh football calendars'
+          git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

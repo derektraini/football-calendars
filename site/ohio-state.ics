@@ -1,0 +1,197 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Football Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Ohio State Buckeyes
+X-WR-TIMEZONE:America/Los_Angeles
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:football-calendar-college-football-osu-68dc9697a20f382a@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Ball State at Ohio State Buckeyes
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,college-football\,Ohio State Buckeyes
+DTSTART:20260905T163000Z
+DTEND:20260905T200000Z
+LOCATION:Ohio Stadium\, Columbus\, Ohio
+URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nSource: https://ohio
+ statebuckeyes.com/sports/football/schedule/text
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-college-football-osu-34c055f97199cd67@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Ohio State Buckeyes at Texas
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,college-football\,Ohio State Buckeyes
+DTSTART:20260912T233000Z
+DTEND:20260913T030000Z
+LOCATION:Austin\, Texas
+URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nAway\nSource: https://ohiostatebuckeyes.com/spo
+ rts/football/schedule/text
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-college-football-osu-dfb5c0cd9e06375d@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Kent State at Ohio State Buckeyes
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,college-football\,Ohio State Buckeyes
+DTSTART:20260919T160000Z
+DTEND:20260919T193000Z
+LOCATION:Ohio Stadium\, Columbus\, Ohio
+URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nSource: https://ohio
+ statebuckeyes.com/sports/football/schedule/text
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-college-football-osu-c0476526b70fb978@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Illinois at Ohio State Buckeyes — Kickoff TBD
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,college-football\,Ohio State Buckeyes
+DTSTART;VALUE=DATE:20260926
+DTEND;VALUE=DATE:20260927
+LOCATION:Ohio Stadium\, Columbus\, Ohio
+URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nKickoff is not confi
+ rmed\; this all-day placeholder will become a timed event when announced.\
+ nSource: https://ohiostatebuckeyes.com/sports/football/schedule/text
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-college-football-osu-aa16bcedfdf4e52f@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Ohio State Buckeyes at Iowa — Kickoff TBD
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,college-football\,Ohio State Buckeyes
+DTSTART;VALUE=DATE:20261003
+DTEND;VALUE=DATE:20261004
+LOCATION:Iowa City\, Iowa
+URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nAway\nKickoff is not confirmed\; this all-day p
+ laceholder will become a timed event when announced.\nSource: https://ohio
+ statebuckeyes.com/sports/football/schedule/text
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-college-football-osu-9454bba023f86e90@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Maryland at Ohio State Buckeyes — Kickoff TBD
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,college-football\,Ohio State Buckeyes
+DTSTART;VALUE=DATE:20261010
+DTEND;VALUE=DATE:20261011
+LOCATION:Ohio Stadium\, Columbus\, Ohio
+URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nKickoff is not confi
+ rmed\; this all-day placeholder will become a timed event when announced.\
+ nSource: https://ohiostatebuckeyes.com/sports/football/schedule/text
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-college-football-osu-3061aedc40c74935@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Ohio State Buckeyes at Indiana — Kickoff TBD
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,college-football\,Ohio State Buckeyes
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+LOCATION:Bloomington\, Ind.
+URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nAway\nKickoff is not confirmed\; this all-day p
+ laceholder will become a timed event when announced.\nSource: https://ohio
+ statebuckeyes.com/sports/football/schedule/text
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-college-football-osu-c7422a697cc32118@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Ohio State Buckeyes at USC — Kickoff TBD
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,college-football\,Ohio State Buckeyes
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+LOCATION:Los Angeles\, Calif.
+URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nAway\nKickoff is not confirmed\; this all-day p
+ laceholder will become a timed event when announced.\nSource: https://ohio
+ statebuckeyes.com/sports/football/schedule/text
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-college-football-osu-f1b30b5095bcff25@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Oregon at Ohio State Buckeyes — Kickoff TBD
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,college-football\,Ohio State Buckeyes
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+LOCATION:Ohio Stadium\, Columbus\, Ohio
+URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nKickoff is not confi
+ rmed\; this all-day placeholder will become a timed event when announced.\
+ nSource: https://ohiostatebuckeyes.com/sports/football/schedule/text
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-college-football-osu-bf880981161a7fb0@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Northwestern at Ohio State Buckeyes — Kickoff TBD
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,college-football\,Ohio State Buckeyes
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+LOCATION:Ohio Stadium\, Columbus\, Ohio
+URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nKickoff is not confi
+ rmed\; this all-day placeholder will become a timed event when announced.\
+ nSource: https://ohiostatebuckeyes.com/sports/football/schedule/text
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-college-football-osu-b255b9b28bfe855f@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Ohio State Buckeyes at Nebraska — Kickoff TBD
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,college-football\,Ohio State Buckeyes
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+LOCATION:Lincoln\, Neb.
+URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nAway\nKickoff is not confirmed\; this all-day p
+ laceholder will become a timed event when announced.\nSource: https://ohio
+ statebuckeyes.com/sports/football/schedule/text
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-college-football-osu-7758fb4b98f39a2a@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Michigan at Ohio State Buckeyes
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,college-football\,Ohio State Buckeyes
+DTSTART:20261128T170000Z
+DTEND:20261128T203000Z
+LOCATION:Ohio Stadium\, Columbus\, Ohio
+URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nSource: https://ohio
+ statebuckeyes.com/sports/football/schedule/text
+END:VEVENT
+END:VCALENDAR

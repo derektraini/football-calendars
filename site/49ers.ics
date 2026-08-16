@@ -1,0 +1,314 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Football Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:San Francisco 49ers
+X-WR-TIMEZONE:America/Los_Angeles
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:football-calendar-nfl-401874392@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Preseason: Tennessee Titans at San Francisco 49ers
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20260814T010000Z
+DTEND:20260814T041500Z
+LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401874392/titans-49ers
+DESCRIPTION:Preseason • 2\nHome\nVenue: Levi's Stadium\nSource: https://w
+ ww.espn.com/nfl/game/_/gameId/401874392/titans-49ers
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873285@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Preseason: San Francisco 49ers at Los Angeles Chargers
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20260821T020000Z
+DTEND:20260821T051500Z
+LOCATION:SoFi Stadium\, Inglewood\, CA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873285/49ers-chargers
+DESCRIPTION:Preseason • 3\nAway\nVenue: SoFi Stadium\nSource: https://www
+ .espn.com/nfl/game/_/gameId/401873285/49ers-chargers
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873641@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Preseason: San Francisco 49ers at Las Vegas Raiders
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20260828T000000Z
+DTEND:20260828T031500Z
+LOCATION:Allegiant Stadium\, Las Vegas\, NV\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873641/49ers-raiders
+DESCRIPTION:Preseason • 4\nAway\nVenue: Allegiant Stadium\nSource: https:
+ //www.espn.com/nfl/game/_/gameId/401873641/49ers-raiders
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401872657@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:San Francisco 49ers at Los Angeles Rams (Neutral site)
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20260911T003500Z
+DTEND:20260911T035000Z
+LOCATION:Melbourne Cricket Ground\, Melbourne\, VIC\, Australia
+URL:https://www.espn.com/nfl/game/_/gameId/401872657/49ers-rams
+DESCRIPTION:Regular Season • 1\nAway • Neutral site\nVenue: Melbourne C
+ ricket Ground\nSource: https://www.espn.com/nfl/game/_/gameId/401872657/49
+ ers-rams
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401872942@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Miami Dolphins at San Francisco 49ers
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20260920T202500Z
+DTEND:20260920T234000Z
+LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401872942/dolphins-49ers
+DESCRIPTION:Regular Season • 2\nHome\nVenue: Levi's Stadium\nSource: http
+ s://www.espn.com/nfl/game/_/gameId/401872942/dolphins-49ers
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401872958@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Arizona Cardinals at San Francisco 49ers
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20260927T200500Z
+DTEND:20260927T232000Z
+LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401872958/cardinals-49ers
+DESCRIPTION:Regular Season • 3\nHome\nVenue: Levi's Stadium\nSource: http
+ s://www.espn.com/nfl/game/_/gameId/401872958/cardinals-49ers
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401872975@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Denver Broncos at San Francisco 49ers
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20261004T202500Z
+DTEND:20261004T234000Z
+LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401872975/broncos-49ers
+DESCRIPTION:Regular Season • 4\nHome\nVenue: Levi's Stadium\nSource: http
+ s://www.espn.com/nfl/game/_/gameId/401872975/broncos-49ers
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401872992@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:San Francisco 49ers at Seattle Seahawks
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20261011T202500Z
+DTEND:20261011T234000Z
+LOCATION:Lumen Field\, Seattle\, WA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401872992/49ers-seahawks
+DESCRIPTION:Regular Season • 5\nAway\nVenue: Lumen Field\nSource: https:/
+ /www.espn.com/nfl/game/_/gameId/401872992/49ers-seahawks
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873008@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Washington Commanders at San Francisco 49ers
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20261020T001500Z
+DTEND:20261020T033000Z
+LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873008/commanders-49ers
+DESCRIPTION:Regular Season • 6\nHome\nVenue: Levi's Stadium\nSource: http
+ s://www.espn.com/nfl/game/_/gameId/401873008/commanders-49ers
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873017@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:San Francisco 49ers at Atlanta Falcons
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20261025T170000Z
+DTEND:20261025T201500Z
+LOCATION:Mercedes-Benz Stadium\, Atlanta\, GA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873017/49ers-falcons
+DESCRIPTION:Regular Season • 7\nAway\nVenue: Mercedes-Benz Stadium\nSourc
+ e: https://www.espn.com/nfl/game/_/gameId/401873017/49ers-falcons
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873047@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Las Vegas Raiders at San Francisco 49ers
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20261108T210500Z
+DTEND:20261109T002000Z
+LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873047/raiders-49ers
+DESCRIPTION:Regular Season • 9\nHome\nVenue: Levi's Stadium\nSource: http
+ s://www.espn.com/nfl/game/_/gameId/401873047/raiders-49ers
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873063@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:San Francisco 49ers at Dallas Cowboys
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20261115T212500Z
+DTEND:20261116T004000Z
+LOCATION:AT&T Stadium\, Arlington\, TX\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873063/49ers-cowboys
+DESCRIPTION:Regular Season • 10\nAway\nVenue: AT&T Stadium\nSource: https
+ ://www.espn.com/nfl/game/_/gameId/401873063/49ers-cowboys
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873077@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Minnesota Vikings at San Francisco 49ers (Neutral site)
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20261123T012000Z
+DTEND:20261123T043500Z
+LOCATION:Estadio Banorte\, Mexico City\, Mexico
+URL:https://www.espn.com/nfl/game/_/gameId/401873077/vikings-49ers
+DESCRIPTION:Regular Season • 11\nHome • Neutral site\nVenue: Estadio Ba
+ norte\nSource: https://www.espn.com/nfl/game/_/gameId/401873077/vikings-49
+ ers
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873091@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Seattle Seahawks at San Francisco 49ers
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20261129T212500Z
+DTEND:20261130T004000Z
+LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873091/seahawks-49ers
+DESCRIPTION:Regular Season • 12\nHome\nVenue: Levi's Stadium\nSource: htt
+ ps://www.espn.com/nfl/game/_/gameId/401873091/seahawks-49ers
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873095@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:San Francisco 49ers at New York Giants
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20261206T180000Z
+DTEND:20261206T211500Z
+LOCATION:MetLife Stadium\, East Rutherford\, NJ\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873095/49ers-giants
+DESCRIPTION:Regular Season • 13\nAway\nVenue: MetLife Stadium\nSource: ht
+ tps://www.espn.com/nfl/game/_/gameId/401873095/49ers-giants
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873120@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Los Angeles Rams at San Francisco 49ers
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20261213T212500Z
+DTEND:20261214T004000Z
+LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873120/rams-49ers
+DESCRIPTION:Regular Season • 14\nHome\nVenue: Levi's Stadium\nSource: htt
+ ps://www.espn.com/nfl/game/_/gameId/401873120/rams-49ers
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873124@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:San Francisco 49ers at Los Angeles Chargers
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20261218T011500Z
+DTEND:20261218T043000Z
+LOCATION:SoFi Stadium\, Inglewood\, CA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873124/49ers-chargers
+DESCRIPTION:Regular Season • 15\nAway\nVenue: SoFi Stadium\nSource: https
+ ://www.espn.com/nfl/game/_/gameId/401873124/49ers-chargers
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873153@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:San Francisco 49ers at Kansas City Chiefs
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20261227T212500Z
+DTEND:20261228T004000Z
+LOCATION:GEHA Field at Arrowhead Stadium\, Kansas City\, MO\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873153/49ers-chiefs
+DESCRIPTION:Regular Season • 16\nAway\nVenue: GEHA Field at Arrowhead Sta
+ dium\nSource: https://www.espn.com/nfl/game/_/gameId/401873153/49ers-chief
+ s
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873170@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Philadelphia Eagles at San Francisco 49ers
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART:20270104T012000Z
+DTEND:20270104T043500Z
+LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873170/eagles-49ers
+DESCRIPTION:Regular Season • 17\nHome\nVenue: Levi's Stadium\nSource: htt
+ ps://www.espn.com/nfl/game/_/gameId/401873170/eagles-49ers
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873184@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:San Francisco 49ers at Arizona Cardinals — Kickoff TBD
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,San Francisco 49ers
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+LOCATION:State Farm Stadium\, Glendale\, AZ\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873184/49ers-cardinals
+DESCRIPTION:Regular Season • 18\nAway\nVenue: State Farm Stadium\nKickoff
+  is not confirmed\; this all-day placeholder will become a timed event whe
+ n announced.\nSource: https://www.espn.com/nfl/game/_/gameId/401873184/49e
+ rs-cardinals
+END:VEVENT
+END:VCALENDAR

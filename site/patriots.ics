@@ -1,0 +1,315 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Football Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:New England Patriots
+X-WR-TIMEZONE:America/Los_Angeles
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873273@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Preseason: Indianapolis Colts at New England Patriots
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20260813T233000Z
+DTEND:20260814T024500Z
+LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873273/colts-patriots
+DESCRIPTION:Preseason • 2\nHome\nVenue: Gillette Stadium\nSource: https:/
+ /www.espn.com/nfl/game/_/gameId/401873273/colts-patriots
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873293@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Preseason: Philadelphia Eagles at New England Patriots
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20260822T230000Z
+DTEND:20260823T021500Z
+LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873293/eagles-patriots
+DESCRIPTION:Preseason • 3\nHome\nVenue: Gillette Stadium\nSource: https:/
+ /www.espn.com/nfl/game/_/gameId/401873293/eagles-patriots
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873299@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Preseason: New England Patriots at Cleveland Browns
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20260828T000000Z
+DTEND:20260828T031500Z
+LOCATION:Huntington Bank Field\, Cleveland\, OH\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873299/patriots-browns
+DESCRIPTION:Preseason • 4\nAway\nVenue: Huntington Bank Field\nSource: ht
+ tps://www.espn.com/nfl/game/_/gameId/401873299/patriots-browns
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401872656@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:New England Patriots at Seattle Seahawks
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20260910T002000Z
+DTEND:20260910T033500Z
+LOCATION:Lumen Field\, Seattle\, WA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401872656/patriots-seahawks
+DESCRIPTION:Regular Season • 1\nAway\nVenue: Lumen Field\nSource: https:/
+ /www.espn.com/nfl/game/_/gameId/401872656/patriots-seahawks
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401872946@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Pittsburgh Steelers at New England Patriots
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20260920T170000Z
+DTEND:20260920T201500Z
+LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401872946/steelers-patriots
+DESCRIPTION:Regular Season • 2\nHome\nVenue: Gillette Stadium\nSource: ht
+ tps://www.espn.com/nfl/game/_/gameId/401872946/steelers-patriots
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401872957@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:New England Patriots at Jacksonville Jaguars
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20260927T170000Z
+DTEND:20260927T201500Z
+LOCATION:EverBank Stadium\, Jacksonville\, FL\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401872957/patriots-jaguars
+DESCRIPTION:Regular Season • 3\nAway\nVenue: EverBank Stadium\nSource: ht
+ tps://www.espn.com/nfl/game/_/gameId/401872957/patriots-jaguars
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401872971@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:New England Patriots at Buffalo Bills
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20261004T170000Z
+DTEND:20261004T201500Z
+LOCATION:Highmark Stadium\, Orchard Park\, NY\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401872971/patriots-bills
+DESCRIPTION:Regular Season • 4\nAway\nVenue: Highmark Stadium\nSource: ht
+ tps://www.espn.com/nfl/game/_/gameId/401872971/patriots-bills
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401872986@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Las Vegas Raiders at New England Patriots
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20261011T170000Z
+DTEND:20261011T201500Z
+LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401872986/raiders-patriots
+DESCRIPTION:Regular Season • 5\nHome\nVenue: Gillette Stadium\nSource: ht
+ tps://www.espn.com/nfl/game/_/gameId/401872986/raiders-patriots
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873001@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:New York Jets at New England Patriots
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20261018T170000Z
+DTEND:20261018T201500Z
+LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873001/jets-patriots
+DESCRIPTION:Regular Season • 6\nHome\nVenue: Gillette Stadium\nSource: ht
+ tps://www.espn.com/nfl/game/_/gameId/401873001/jets-patriots
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873010@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:New England Patriots at Chicago Bears
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20261023T001500Z
+DTEND:20261023T033000Z
+LOCATION:Soldier Field\, Chicago\, IL\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873010/patriots-bears
+DESCRIPTION:Regular Season • 7\nAway\nVenue: Soldier Field\nSource: https
+ ://www.espn.com/nfl/game/_/gameId/401873010/patriots-bears
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873034@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:New England Patriots at Miami Dolphins
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20261101T212500Z
+DTEND:20261102T004000Z
+LOCATION:Hard Rock Stadium\, Miami Gardens\, FL\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873034/patriots-dolphins
+DESCRIPTION:Regular Season • 8\nAway\nVenue: Hard Rock Stadium\nSource: h
+ ttps://www.espn.com/nfl/game/_/gameId/401873034/patriots-dolphins
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873049@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Green Bay Packers at New England Patriots
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20261108T212500Z
+DTEND:20261109T004000Z
+LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873049/packers-patriots
+DESCRIPTION:Regular Season • 9\nHome\nVenue: Gillette Stadium\nSource: ht
+ tps://www.espn.com/nfl/game/_/gameId/401873049/packers-patriots
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873053@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:New England Patriots at Detroit Lions (Neutral site)
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20261115T143000Z
+DTEND:20261115T174500Z
+LOCATION:FC Bayern Munich Stadium\, Munich\, Germany
+URL:https://www.espn.com/nfl/game/_/gameId/401873053/patriots-lions
+DESCRIPTION:Regular Season • 10\nAway • Neutral site\nVenue: FC Bayern 
+ Munich Stadium\nSource: https://www.espn.com/nfl/game/_/gameId/401873053/p
+ atriots-lions
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873093@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:New England Patriots at Los Angeles Chargers
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20261130T012000Z
+DTEND:20261130T043500Z
+LOCATION:SoFi Stadium\, Inglewood\, CA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873093/patriots-chargers
+DESCRIPTION:Regular Season • 12\nAway\nVenue: SoFi Stadium\nSource: https
+ ://www.espn.com/nfl/game/_/gameId/401873093/patriots-chargers
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873105@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Buffalo Bills at New England Patriots
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20261206T212500Z
+DTEND:20261207T004000Z
+LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873105/bills-patriots
+DESCRIPTION:Regular Season • 13\nHome\nVenue: Gillette Stadium\nSource: h
+ ttps://www.espn.com/nfl/game/_/gameId/401873105/bills-patriots
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873109@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Minnesota Vikings at New England Patriots
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20261211T011500Z
+DTEND:20261211T043000Z
+LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873109/vikings-patriots
+DESCRIPTION:Regular Season • 14\nHome\nVenue: Gillette Stadium\nSource: h
+ ttps://www.espn.com/nfl/game/_/gameId/401873109/vikings-patriots
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873139@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:New England Patriots at Kansas City Chiefs
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20261222T011500Z
+DTEND:20261222T043000Z
+LOCATION:GEHA Field at Arrowhead Stadium\, Kansas City\, MO\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873139/patriots-chiefs
+DESCRIPTION:Regular Season • 15\nAway\nVenue: GEHA Field at Arrowhead Sta
+ dium\nSource: https://www.espn.com/nfl/game/_/gameId/401873139/patriots-ch
+ iefs
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873151@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:New England Patriots at New York Jets
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART:20261227T180000Z
+DTEND:20261227T211500Z
+LOCATION:MetLife Stadium\, East Rutherford\, NJ\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873151/patriots-jets
+DESCRIPTION:Regular Season • 16\nAway\nVenue: MetLife Stadium\nSource: ht
+ tps://www.espn.com/nfl/game/_/gameId/401873151/patriots-jets
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873157@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Denver Broncos at New England Patriots — Kickoff TBD
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART;VALUE=DATE:20270102
+DTEND;VALUE=DATE:20270103
+LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873157/broncos-patriots
+DESCRIPTION:Regular Season • 17\nHome\nVenue: Gillette Stadium\nKickoff i
+ s not confirmed\; this all-day placeholder will become a timed event when 
+ announced.\nSource: https://www.espn.com/nfl/game/_/gameId/401873157/bronc
+ os-patriots
+END:VEVENT
+BEGIN:VEVENT
+UID:football-calendar-nfl-401873180@local
+DTSTAMP:20260816T175548Z
+LAST-MODIFIED:20260816T175548Z
+SEQUENCE:1
+SUMMARY:Miami Dolphins at New England Patriots — Kickoff TBD
+TRANSP:TRANSPARENT
+CATEGORIES:Football\,nfl\,New England Patriots
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
+URL:https://www.espn.com/nfl/game/_/gameId/401873180/dolphins-patriots
+DESCRIPTION:Regular Season • 18\nHome\nVenue: Gillette Stadium\nKickoff i
+ s not confirmed\; this all-day placeholder will become a timed event when 
+ announced.\nSource: https://www.espn.com/nfl/game/_/gameId/401873180/dolph
+ ins-patriots
+END:VEVENT
+END:VCALENDAR
