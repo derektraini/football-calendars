@@ -8,9 +8,9 @@ X-WR-TIMEZONE:America/Los_Angeles
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-68dc9697a20f382a@local
-DTSTAMP:20260816T175548Z
-LAST-MODIFIED:20260816T175548Z
-SEQUENCE:1
+DTSTAMP:20260816T181606Z
+LAST-MODIFIED:20260816T181606Z
+SEQUENCE:2
 SUMMARY:Ball State at Ohio State Buckeyes
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -23,9 +23,9 @@ DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nSource: https://ohio
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-34c055f97199cd67@local
-DTSTAMP:20260816T175548Z
-LAST-MODIFIED:20260816T175548Z
-SEQUENCE:1
+DTSTAMP:20260816T181606Z
+LAST-MODIFIED:20260816T181606Z
+SEQUENCE:2
 SUMMARY:Ohio State Buckeyes at Texas
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -38,9 +38,9 @@ DESCRIPTION:Regular Season\nAway\nSource: https://ohiostatebuckeyes.com/spo
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-dfb5c0cd9e06375d@local
-DTSTAMP:20260816T175548Z
-LAST-MODIFIED:20260816T175548Z
-SEQUENCE:1
+DTSTAMP:20260816T181606Z
+LAST-MODIFIED:20260816T181606Z
+SEQUENCE:2
 SUMMARY:Kent State at Ohio State Buckeyes
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -53,9 +53,9 @@ DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nSource: https://ohio
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-c0476526b70fb978@local
-DTSTAMP:20260816T175548Z
-LAST-MODIFIED:20260816T175548Z
-SEQUENCE:1
+DTSTAMP:20260816T181606Z
+LAST-MODIFIED:20260816T181606Z
+SEQUENCE:2
 SUMMARY:Illinois at Ohio State Buckeyes — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -69,9 +69,9 @@ DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nKickoff is not confi
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-aa16bcedfdf4e52f@local
-DTSTAMP:20260816T175548Z
-LAST-MODIFIED:20260816T175548Z
-SEQUENCE:1
+DTSTAMP:20260816T181606Z
+LAST-MODIFIED:20260816T181606Z
+SEQUENCE:2
 SUMMARY:Ohio State Buckeyes at Iowa — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -85,9 +85,9 @@ DESCRIPTION:Regular Season\nAway\nKickoff is not confirmed\; this all-day p
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-9454bba023f86e90@local
-DTSTAMP:20260816T175548Z
-LAST-MODIFIED:20260816T175548Z
-SEQUENCE:1
+DTSTAMP:20260816T181606Z
+LAST-MODIFIED:20260816T181606Z
+SEQUENCE:2
 SUMMARY:Maryland at Ohio State Buckeyes — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -101,9 +101,9 @@ DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nKickoff is not confi
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-3061aedc40c74935@local
-DTSTAMP:20260816T175548Z
-LAST-MODIFIED:20260816T175548Z
-SEQUENCE:1
+DTSTAMP:20260816T181606Z
+LAST-MODIFIED:20260816T181606Z
+SEQUENCE:2
 SUMMARY:Ohio State Buckeyes at Indiana — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -117,9 +117,9 @@ DESCRIPTION:Regular Season\nAway\nKickoff is not confirmed\; this all-day p
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-c7422a697cc32118@local
-DTSTAMP:20260816T175548Z
-LAST-MODIFIED:20260816T175548Z
-SEQUENCE:1
+DTSTAMP:20260816T181606Z
+LAST-MODIFIED:20260816T181606Z
+SEQUENCE:2
 SUMMARY:Ohio State Buckeyes at USC — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -133,9 +133,9 @@ DESCRIPTION:Regular Season\nAway\nKickoff is not confirmed\; this all-day p
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-f1b30b5095bcff25@local
-DTSTAMP:20260816T175548Z
-LAST-MODIFIED:20260816T175548Z
-SEQUENCE:1
+DTSTAMP:20260816T181606Z
+LAST-MODIFIED:20260816T181606Z
+SEQUENCE:2
 SUMMARY:Oregon at Ohio State Buckeyes — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -149,9 +149,9 @@ DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nKickoff is not confi
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-bf880981161a7fb0@local
-DTSTAMP:20260816T175548Z
-LAST-MODIFIED:20260816T175548Z
-SEQUENCE:1
+DTSTAMP:20260816T181606Z
+LAST-MODIFIED:20260816T181606Z
+SEQUENCE:2
 SUMMARY:Northwestern at Ohio State Buckeyes — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -165,9 +165,9 @@ DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nKickoff is not confi
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-b255b9b28bfe855f@local
-DTSTAMP:20260816T175548Z
-LAST-MODIFIED:20260816T175548Z
-SEQUENCE:1
+DTSTAMP:20260816T181606Z
+LAST-MODIFIED:20260816T181606Z
+SEQUENCE:2
 SUMMARY:Ohio State Buckeyes at Nebraska — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -181,9 +181,9 @@ DESCRIPTION:Regular Season\nAway\nKickoff is not confirmed\; this all-day p
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-7758fb4b98f39a2a@local
-DTSTAMP:20260816T175548Z
-LAST-MODIFIED:20260816T175548Z
-SEQUENCE:1
+DTSTAMP:20260816T181606Z
+LAST-MODIFIED:20260816T181606Z
+SEQUENCE:2
 SUMMARY:Michigan at Ohio State Buckeyes
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
