@@ -98,18 +98,19 @@ DESCRIPTION:Preseason • 4\nAway\nVenue: Allegiant Stadium\nSource: https:
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-68dc9697a20f382a@local
-DTSTAMP:20260816T181606Z
-LAST-MODIFIED:20260816T181606Z
-SEQUENCE:2
-SUMMARY:Ball State at Ohio State Buckeyes
+DTSTAMP:20260819T174537Z
+LAST-MODIFIED:20260819T174537Z
+SEQUENCE:3
+SUMMARY:Ball State at #1 Ohio State Buckeyes
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART:20260905T163000Z
 DTEND:20260905T200000Z
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nSource: https://ohio
- statebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
+  #1\; Ball State Unranked (AP Top 25)\nSource: https://ohiostatebuckeyes.c
+ om/sports/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401872656@local
@@ -144,33 +145,34 @@ DESCRIPTION:Regular Season • 1\nAway • Neutral site\nVenue: Melbourne C
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-34c055f97199cd67@local
-DTSTAMP:20260816T181606Z
-LAST-MODIFIED:20260816T181606Z
-SEQUENCE:2
-SUMMARY:Ohio State Buckeyes at Texas
+DTSTAMP:20260819T174537Z
+LAST-MODIFIED:20260819T174537Z
+SEQUENCE:3
+SUMMARY:#1 Ohio State Buckeyes at #5 Texas
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART:20260912T233000Z
 DTEND:20260913T030000Z
 LOCATION:Austin\, Texas
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nSource: https://ohiostatebuckeyes.com/spo
- rts/football/schedule/text
+DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #1\; Texas #5 (AP To
+ p 25)\nSource: https://ohiostatebuckeyes.com/sports/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-dfb5c0cd9e06375d@local
-DTSTAMP:20260816T181606Z
-LAST-MODIFIED:20260816T181606Z
-SEQUENCE:2
-SUMMARY:Kent State at Ohio State Buckeyes
+DTSTAMP:20260819T174537Z
+LAST-MODIFIED:20260819T174537Z
+SEQUENCE:3
+SUMMARY:Kent State at #1 Ohio State Buckeyes
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART:20260919T160000Z
 DTEND:20260919T193000Z
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nSource: https://ohio
- statebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
+  #1\; Kent State Unranked (AP Top 25)\nSource: https://ohiostatebuckeyes.c
+ om/sports/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401872942@local
@@ -204,19 +206,20 @@ DESCRIPTION:Regular Season • 2\nHome\nVenue: Gillette Stadium\nSource: ht
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-c0476526b70fb978@local
-DTSTAMP:20260816T181606Z
-LAST-MODIFIED:20260816T181606Z
-SEQUENCE:2
-SUMMARY:Illinois at Ohio State Buckeyes — Kickoff TBD
+DTSTAMP:20260819T174537Z
+LAST-MODIFIED:20260819T174537Z
+SEQUENCE:3
+SUMMARY:Illinois at #1 Ohio State Buckeyes — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20260926
 DTEND;VALUE=DATE:20260927
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nKickoff is not confi
- rmed\; this all-day placeholder will become a timed event when announced.\
- nSource: https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
+  #1\; Illinois Unranked (AP Top 25)\nKickoff is not confirmed\; this all-d
+ ay placeholder will become a timed event when announced.\nSource: https://
+ ohiostatebuckeyes.com/sports/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401872957@local
@@ -250,19 +253,20 @@ DESCRIPTION:Regular Season • 3\nHome\nVenue: Levi's Stadium\nSource: http
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-aa16bcedfdf4e52f@local
-DTSTAMP:20260816T181606Z
-LAST-MODIFIED:20260816T181606Z
-SEQUENCE:2
-SUMMARY:Ohio State Buckeyes at Iowa — Kickoff TBD
+DTSTAMP:20260819T174537Z
+LAST-MODIFIED:20260819T174537Z
+SEQUENCE:3
+SUMMARY:#1 Ohio State Buckeyes at #22 Iowa — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261003
 DTEND;VALUE=DATE:20261004
 LOCATION:Iowa City\, Iowa
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nKickoff is not confirmed\; this all-day p
- laceholder will become a timed event when announced.\nSource: https://ohio
- statebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #1\; Iowa #22 (AP To
+ p 25)\nKickoff is not confirmed\; this all-day placeholder will become a t
+ imed event when announced.\nSource: https://ohiostatebuckeyes.com/sports/f
+ ootball/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401872971@local
@@ -296,19 +300,20 @@ DESCRIPTION:Regular Season • 4\nHome\nVenue: Levi's Stadium\nSource: http
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-9454bba023f86e90@local
-DTSTAMP:20260816T181606Z
-LAST-MODIFIED:20260816T181606Z
-SEQUENCE:2
-SUMMARY:Maryland at Ohio State Buckeyes — Kickoff TBD
+DTSTAMP:20260819T174537Z
+LAST-MODIFIED:20260819T174537Z
+SEQUENCE:3
+SUMMARY:Maryland at #1 Ohio State Buckeyes — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261010
 DTEND;VALUE=DATE:20261011
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nKickoff is not confi
- rmed\; this all-day placeholder will become a timed event when announced.\
- nSource: https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
+  #1\; Maryland Unranked (AP Top 25)\nKickoff is not confirmed\; this all-d
+ ay placeholder will become a timed event when announced.\nSource: https://
+ ohiostatebuckeyes.com/sports/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401872986@local
@@ -342,19 +347,20 @@ DESCRIPTION:Regular Season • 5\nAway\nVenue: Lumen Field\nSource: https:/
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-3061aedc40c74935@local
-DTSTAMP:20260816T181606Z
-LAST-MODIFIED:20260816T181606Z
-SEQUENCE:2
-SUMMARY:Ohio State Buckeyes at Indiana — Kickoff TBD
+DTSTAMP:20260819T174537Z
+LAST-MODIFIED:20260819T174537Z
+SEQUENCE:3
+SUMMARY:#1 Ohio State Buckeyes at #6 Indiana — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261017
 DTEND;VALUE=DATE:20261018
 LOCATION:Bloomington\, Ind.
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nKickoff is not confirmed\; this all-day p
- laceholder will become a timed event when announced.\nSource: https://ohio
- statebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #1\; Indiana #6 (AP 
+ Top 25)\nKickoff is not confirmed\; this all-day placeholder will become a
+  timed event when announced.\nSource: https://ohiostatebuckeyes.com/sports
+ /football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873001@local
@@ -418,19 +424,20 @@ DESCRIPTION:Regular Season • 7\nAway\nVenue: Mercedes-Benz Stadium\nSourc
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-c7422a697cc32118@local
-DTSTAMP:20260816T181606Z
-LAST-MODIFIED:20260816T181606Z
-SEQUENCE:2
-SUMMARY:Ohio State Buckeyes at USC — Kickoff TBD
+DTSTAMP:20260819T174537Z
+LAST-MODIFIED:20260819T174537Z
+SEQUENCE:3
+SUMMARY:#1 Ohio State Buckeyes at #14 USC — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261101
 LOCATION:Los Angeles\, Calif.
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nKickoff is not confirmed\; this all-day p
- laceholder will become a timed event when announced.\nSource: https://ohio
- statebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #1\; USC #14 (AP Top
+  25)\nKickoff is not confirmed\; this all-day placeholder will become a ti
+ med event when announced.\nSource: https://ohiostatebuckeyes.com/sports/fo
+ otball/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873034@local
@@ -449,19 +456,20 @@ DESCRIPTION:Regular Season • 8\nAway\nVenue: Hard Rock Stadium\nSource: h
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-f1b30b5095bcff25@local
-DTSTAMP:20260816T181606Z
-LAST-MODIFIED:20260816T181606Z
-SEQUENCE:2
-SUMMARY:Oregon at Ohio State Buckeyes — Kickoff TBD
+DTSTAMP:20260819T174537Z
+LAST-MODIFIED:20260819T174537Z
+SEQUENCE:3
+SUMMARY:#2 Oregon at #1 Ohio State Buckeyes — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261107
 DTEND;VALUE=DATE:20261108
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nKickoff is not confi
- rmed\; this all-day placeholder will become a timed event when announced.\
- nSource: https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
+  #1\; Oregon #2 (AP Top 25)\nKickoff is not confirmed\; this all-day place
+ holder will become a timed event when announced.\nSource: https://ohiostat
+ ebuckeyes.com/sports/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873047@local
@@ -495,19 +503,20 @@ DESCRIPTION:Regular Season • 9\nHome\nVenue: Gillette Stadium\nSource: ht
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-bf880981161a7fb0@local
-DTSTAMP:20260816T181606Z
-LAST-MODIFIED:20260816T181606Z
-SEQUENCE:2
-SUMMARY:Northwestern at Ohio State Buckeyes — Kickoff TBD
+DTSTAMP:20260819T174537Z
+LAST-MODIFIED:20260819T174537Z
+SEQUENCE:3
+SUMMARY:Northwestern at #1 Ohio State Buckeyes — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261115
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nKickoff is not confi
- rmed\; this all-day placeholder will become a timed event when announced.\
- nSource: https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
+  #1\; Northwestern Unranked (AP Top 25)\nKickoff is not confirmed\; this a
+ ll-day placeholder will become a timed event when announced.\nSource: http
+ s://ohiostatebuckeyes.com/sports/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873053@local
@@ -542,19 +551,20 @@ DESCRIPTION:Regular Season • 10\nAway\nVenue: AT&T Stadium\nSource: https
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-b255b9b28bfe855f@local
-DTSTAMP:20260816T181606Z
-LAST-MODIFIED:20260816T181606Z
-SEQUENCE:2
-SUMMARY:Ohio State Buckeyes at Nebraska — Kickoff TBD
+DTSTAMP:20260819T174537Z
+LAST-MODIFIED:20260819T174537Z
+SEQUENCE:3
+SUMMARY:#1 Ohio State Buckeyes at Nebraska — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261121
 DTEND;VALUE=DATE:20261122
 LOCATION:Lincoln\, Neb.
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nKickoff is not confirmed\; this all-day p
- laceholder will become a timed event when announced.\nSource: https://ohio
- statebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #1\; Nebraska Unrank
+ ed (AP Top 25)\nKickoff is not confirmed\; this all-day placeholder will b
+ ecome a timed event when announced.\nSource: https://ohiostatebuckeyes.com
+ /sports/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873077@local
@@ -574,18 +584,19 @@ DESCRIPTION:Regular Season • 11\nHome • Neutral site\nVenue: Estadio Ba
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-7758fb4b98f39a2a@local
-DTSTAMP:20260816T181606Z
-LAST-MODIFIED:20260816T181606Z
-SEQUENCE:2
-SUMMARY:Michigan at Ohio State Buckeyes
+DTSTAMP:20260819T174537Z
+LAST-MODIFIED:20260819T174537Z
+SEQUENCE:3
+SUMMARY:#16 Michigan at #1 Ohio State Buckeyes
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART:20261128T170000Z
 DTEND:20261128T203000Z
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nSource: https://ohio
- statebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
+  #1\; Michigan #16 (AP Top 25)\nSource: https://ohiostatebuckeyes.com/spor
+ ts/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873091@local
