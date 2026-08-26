@@ -250,19 +250,18 @@ DESCRIPTION:Regular Season • 14\nHome\nVenue: Gillette Stadium\nSource: h
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873139@local
-DTSTAMP:20260816T181606Z
-LAST-MODIFIED:20260816T181606Z
-SEQUENCE:2
+DTSTAMP:20260826T192229Z
+LAST-MODIFIED:20260826T192229Z
+SEQUENCE:3
 SUMMARY:New England Patriots at Kansas City Chiefs
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,New England Patriots
 DTSTART:20261222T011500Z
 DTEND:20261222T043000Z
-LOCATION:GEHA Field at Arrowhead Stadium\, Kansas City\, MO\, USA
+LOCATION:Arrowhead Stadium\, Kansas City\, MO\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873139/patriots-chiefs
-DESCRIPTION:Regular Season • 15\nAway\nVenue: GEHA Field at Arrowhead Sta
- dium\nSource: https://www.espn.com/nfl/game/_/gameId/401873139/patriots-ch
- iefs
+DESCRIPTION:Regular Season • 15\nAway\nVenue: Arrowhead Stadium\nSource: 
+ https://www.espn.com/nfl/game/_/gameId/401873139/patriots-chiefs
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873151@local
