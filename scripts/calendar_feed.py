@@ -392,8 +392,15 @@ def get_live_games(today: date) -> list[Game]:
     nfl_games: list[Game] = []
     nfl_season = current_nfl_season(today)
     for team in TEAMS[1:]:
-        payload = fetch_json(f"{ESPN}/nfl/scoreboard?dates={nfl_season}0801-{nfl_season + 1}0220&limit=1000")
-        parsed = parse_espn_schedule(team, payload)
+        # ESPN removed date-range queries from the scoreboard endpoint, so pull
+        # each season type from the per-team schedule endpoint instead.
+        events: list[dict[str, Any]] = []
+        for season_type_id in (1, 2, 3):  # preseason, regular season, postseason
+            schedule = fetch_json(
+                f"{ESPN}/nfl/teams/{team.espn_id}/schedule?season={nfl_season}&seasontype={season_type_id}"
+            )
+            events.extend(schedule.get("events", []))
+        parsed = parse_espn_schedule(team, {"events": events})
         regular_season_games = [game for game in parsed if game.season_type == "Regular Season"]
         require_complete_schedule(f"NFL provider ({team.name} regular season)", regular_season_games, 17)
         nfl_games.extend(parsed)
