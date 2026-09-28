@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import tempfile
 import unittest
-from datetime import UTC, datetime, timedelta
+from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 
 from scripts.calendar_feed import Game, event_lines, load_fixture, require_complete_schedule, write_feeds
@@ -80,6 +80,26 @@ class CalendarFeedTests(unittest.TestCase):
         lines = event_lines(matchup, {}, self.now)
         self.assertIn("SUMMARY:#4 Ohio State Buckeyes at #8 Texas Longhorns", lines)
         self.assertTrue(any("Rankings: Ohio State #4\\; Texas Longhorns #8 (AP Top 25)" in line for line in lines))
+
+    def test_completed_college_game_keeps_last_pregame_ranking_snapshot(self) -> None:
+        state: dict[str, object] = {}
+        upcoming = Game(**{**self.games[0].__dict__, "game_date": date(2026, 9, 5)})
+        first = event_lines(upcoming, state, datetime(2026, 9, 4, 18, 0, tzinfo=UTC))
+        completed = Game(**{
+            **upcoming.__dict__, "rank": "#7", "opponent_rank": "#9", "rank_source": "AP Top 25",
+        })
+        historical = event_lines(completed, state, datetime(2026, 9, 8, 18, 0, tzinfo=UTC))
+        self.assertEqual(next(line for line in first if line.startswith("UID:")), next(line for line in historical if line.startswith("UID:")))
+        self.assertIn("SUMMARY:#4 Ohio State Buckeyes at Texas Longhorns", historical)
+        self.assertIn("SEQUENCE:0", historical)
+
+    def test_upcoming_college_game_ranking_updates_remain_material(self) -> None:
+        state: dict[str, object] = {}
+        game = Game(**{**self.games[0].__dict__, "game_date": date(2026, 9, 12)})
+        event_lines(game, state, datetime(2026, 9, 4, 18, 0, tzinfo=UTC))
+        revised = Game(**{**game.__dict__, "rank": "#7"})
+        lines = event_lines(revised, state, datetime(2026, 9, 5, 18, 0, tzinfo=UTC))
+        self.assertIn("SEQUENCE:1", lines)
 
     def test_incomplete_schedule_fails_closed(self) -> None:
         with self.assertRaisesRegex(ValueError, "Ohio State provider returned an incomplete schedule"):
