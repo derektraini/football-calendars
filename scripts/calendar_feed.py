@@ -272,7 +272,9 @@ def playoff_status(team_id: str, standings: dict[str, Any], today: date) -> str 
 def enrich(games: list[Game], rankings: dict[str, int], rankings_by_name: dict[str, int], ranking_source: str | None,
            standings: dict[str, Any], today: date) -> None:
     for game in games:
-        if game.league == "college-football" and rankings:
+        # Polls are live context for games that have not happened yet.  Completed
+        # games retain the last ranking snapshot stored with their event state.
+        if game.league == "college-football" and game.game_date >= today and rankings:
             rank = rankings.get("194")
             if rank:
                 game.rank, game.rank_source = f"#{rank}", ranking_source
@@ -309,14 +311,28 @@ def state_for(game: Game) -> dict[str, Any]:
     return asdict(game)
 
 
+def ranking_snapshot(game: Game) -> dict[str, str | None]:
+    return {
+        "rank": game.rank,
+        "opponent_rank": game.opponent_rank,
+        "rank_source": game.rank_source,
+    }
+
+
 def event_lines(game: Game, state: dict[str, Any], now: datetime) -> list[str]:
     old = state.get(game.uid, {})
+    completed = game.league == "college-football" and game.game_date < now.astimezone(PACIFIC).date()
+    if completed and (snapshot := old.get("ranking_snapshot")):
+        game = Game(**{**game.__dict__, **snapshot})
     fingerprint = hashlib.sha256(json.dumps(state_for(game), sort_keys=True, default=str).encode()).hexdigest()
     if old.get("fingerprint") == fingerprint:
         sequence, modified = old["sequence"], old["modified"]
     else:
         sequence, modified = int(old.get("sequence", -1)) + 1, now.strftime("%Y%m%dT%H%M%SZ")
-        state[game.uid] = {"fingerprint": fingerprint, "sequence": sequence, "modified": modified}
+    entry = {"fingerprint": fingerprint, "sequence": sequence, "modified": modified}
+    if game.league == "college-football":
+        entry["ranking_snapshot"] = old.get("ranking_snapshot") if completed else ranking_snapshot(game)
+    state[game.uid] = entry
     team_name = f"{game.rank} {game.team}" if game.rank else game.team
     opponent_name = f"{game.opponent_rank} {game.opponent}" if game.opponent_rank else game.opponent
     summary = f"{opponent_name} at {team_name}" if game.home_away == "home" else f"{team_name} at {opponent_name}"
