@@ -22,6 +22,12 @@ CFP_FIRST_RELEASE = {2026: date(2026, 11, 3)}
 PACIFIC = ZoneInfo("America/Los_Angeles")
 EASTERN = ZoneInfo("America/New_York")
 SEASON_TYPES = {"1": "Preseason", "2": "Regular Season", "3": "Postseason"}
+# Published duplicate -> original UID. Keep the cancellation in subscriptions
+# while the canonical game remains in the schedule, including after refreshes.
+SUPERSEDED_UIDS = {
+    "football-calendar-college-football-osu-45b8ca68d0259b49@local":
+        "football-calendar-college-football-osu-34c055f97199cd67@local",
+}
 
 
 @dataclass(frozen=True)
@@ -195,7 +201,7 @@ def parse_osu_schedule(html: str, year: int) -> list[Game]:
             except ValueError:
                 confirmed = False
         home_away = cells[2].lower()
-        opponent = cells[3].strip() or "Opponent TBD"
+        opponent = unranked_team_name(cells[3]) or "Opponent TBD"
         raw_location = cells[4].strip()
         venue_match = re.search(r"\(([^)]+)\)", raw_location)
         venue = venue_match.group(1) if venue_match else ""
@@ -213,8 +219,13 @@ def parse_osu_schedule(html: str, year: int) -> list[Game]:
     return games
 
 
+def unranked_team_name(name: str) -> str:
+    """Remove leading schedule poll labels, preserving the actual team name."""
+    return re.sub(r"^(?:(?:#\s*|No\.?\s*)\d+|\(\d+\))\s+", "", name.strip(), flags=re.IGNORECASE)
+
+
 def normalized_team_name(name: str) -> str:
-    return re.sub(r"[^a-z0-9]", "", name.casefold())
+    return re.sub(r"[^a-z0-9]", "", unranked_team_name(name).casefold())
 
 
 def select_ranking(payload: dict[str, Any], today: date) -> tuple[dict[str, int], dict[str, int], str | None]:
@@ -369,6 +380,23 @@ def event_lines(game: Game, state: dict[str, Any], now: datetime) -> list[str]:
     return lines + ["END:VEVENT"]
 
 
+def superseded_event_lines(game: Game, uid: str, state: dict[str, Any], now: datetime) -> list[str]:
+    """Retire a published duplicate without cancelling the canonical game."""
+    old = state[uid]
+    fingerprint = f"superseded-by:{game.uid}"
+    if old.get("fingerprint") == fingerprint:
+        sequence, modified = old["sequence"], old["modified"]
+    else:
+        sequence = int(old.get("sequence", -1)) + 1
+        modified = now.strftime("%Y%m%dT%H%M%SZ")
+        state[uid] = {**old, "fingerprint": fingerprint, "sequence": sequence, "modified": modified}
+    # The duplicate was published as a timed Texas game on September 12, 2026.
+    return ["BEGIN:VEVENT", f"UID:{uid}", f"DTSTAMP:{modified}",
+            f"LAST-MODIFIED:{modified}", f"SEQUENCE:{sequence}",
+            "DTSTART:20260912T233000Z", "STATUS:CANCELLED", "TRANSP:TRANSPARENT",
+            "SUMMARY:Superseded duplicate of Ohio State at Texas", "END:VEVENT"]
+
+
 def render_calendar(name: str, games: list[Game], state: dict[str, Any], now: datetime, color: str | None = None) -> str:
     lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Football Calendars//EN", "CALSCALE:GREGORIAN",
              "METHOD:PUBLISH", f"X-WR-CALNAME:{text_value(name)}", "X-WR-TIMEZONE:America/Los_Angeles",
@@ -377,6 +405,9 @@ def render_calendar(name: str, games: list[Game], state: dict[str, Any], now: da
         lines.append(f"COLOR:{color}")
     for game in sorted(games, key=lambda game: (game.game_date, game.provider_id)):
         lines.extend(event_lines(game, state, now))
+        for obsolete_uid, canonical_uid in SUPERSEDED_UIDS.items():
+            if game.uid == canonical_uid and obsolete_uid in state:
+                lines.extend(superseded_event_lines(game, obsolete_uid, state, now))
     lines.append("END:VCALENDAR")
     return "\r\n".join(part for line in lines for part in fold(line)) + "\r\n"
 
@@ -447,7 +478,7 @@ def main() -> int:
     args = parser.parse_args()
     now = datetime.now(UTC).replace(microsecond=0)
     try:
-        games = load_fixture(args.fixture) if args.fixture else get_live_games(now.date())
+        games = load_fixture(args.fixture) if args.fixture else get_live_games(now.astimezone(PACIFIC).date())
         if not games:
             raise ValueError("no games were produced")
         write_feeds(games, args.output, args.state, now)
