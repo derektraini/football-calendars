@@ -3,13 +3,126 @@ from __future__ import annotations
 import json
 import tempfile
 import unittest
-from datetime import UTC, datetime, timedelta
+from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 
-from scripts.calendar_feed import Game, event_lines, load_fixture, require_complete_schedule, write_feeds
+from scripts.calendar_feed import (
+    Game, enrich, event_lines, load_fixture, normalized_team_name, parse_osu_schedule,
+    require_complete_schedule, select_ranking, unranked_team_name, write_feeds,
+)
 
 
 ROOT = Path(__file__).parent
+
+
+def texas_schedule(opponent: str, kickoff: str = "7:30 PM") -> str:
+    return (f"<table><tr><td>Sep 12 (Sat)</td><td>{kickoff}</td><td>Away</td>"
+            f"<td>{opponent}</td><td>Austin, Texas</td></tr></table>")
+
+
+class OpponentIdentityTests(unittest.TestCase):
+    canonical_uid = "football-calendar-college-football-osu-34c055f97199cd67@local"
+    duplicate_uid = "football-calendar-college-football-osu-45b8ca68d0259b49@local"
+
+    def test_schedule_rank_prefix_changes_keep_original_texas_uid(self) -> None:
+        for opponent in ("Texas", "#4 Texas", "#7 Texas", " # 12 Texas ",
+                         "No. 4 Texas", "No.4 Texas", "no 7 Texas", "(4) Texas"):
+            with self.subTest(opponent=opponent):
+                game = parse_osu_schedule(texas_schedule(opponent), 2026)[0]
+                self.assertEqual(game.opponent, "Texas")
+                self.assertEqual(game.uid, self.canonical_uid)
+                self.assertIsNone(game.opponent_rank)
+
+    def test_normalization_preserves_numbers_in_actual_names(self) -> None:
+        for name in ("San Francisco 49ers", "4 Texas", "Texas A&M", "Miami (OH)", "Texas #4"):
+            with self.subTest(name=name):
+                self.assertEqual(unranked_team_name(name), name)
+        self.assertEqual(normalized_team_name("#4 Texas"), "texas")
+        self.assertEqual(normalized_team_name("San Francisco 49ers"), "sanfrancisco49ers")
+
+    def test_poll_lookup_and_rendering_use_enrichment_rank(self) -> None:
+        ranks, by_name, source = select_ranking({"rankings": [{
+            "name": "AP Top 25", "ranks": [
+                {"current": 6, "team": {"id": "194", "location": "Ohio State"}},
+                {"current": 9, "team": {"id": "251", "location": "Texas"}},
+            ],
+        }]}, date(2026, 9, 9))
+        game = parse_osu_schedule(texas_schedule("#4 Texas"), 2026)[0]
+        enrich([game], ranks, by_name, source, {}, date(2026, 9, 9))
+        lines = event_lines(game, {}, datetime(2026, 9, 9, tzinfo=UTC))
+        self.assertIn("SUMMARY:#6 Ohio State Buckeyes at #9 Texas", lines)
+        self.assertTrue(any("Texas #9 (AP Top 25)" in line for line in lines))
+        self.assertFalse(any("#4" in line or "Unranked" in line for line in lines))
+
+    def test_schedule_rank_without_selected_poll_is_not_rendered(self) -> None:
+        game = parse_osu_schedule(texas_schedule("#4 Texas"), 2026)[0]
+        enrich([game], {}, {}, None, {}, date(2026, 9, 9))
+        lines = event_lines(game, {}, datetime(2026, 9, 9, tzinfo=UTC))
+        self.assertIn("SUMMARY:Ohio State Buckeyes at Texas", lines)
+        self.assertFalse(any("#4" in line for line in lines))
+
+    def test_schedule_prefix_only_change_is_not_material_but_poll_change_is(self) -> None:
+        state = {}
+        now = datetime(2026, 9, 9, tzinfo=UTC)
+        for label in ("Texas", "#4 Texas", "#7 Texas", "Texas"):
+            game = parse_osu_schedule(texas_schedule(label), 2026)[0]
+            enrich([game], {"194": 6}, {"texas": 9}, "AP Top 25", {}, now.date())
+            lines = event_lines(game, state, now)
+            self.assertIn("SEQUENCE:0", lines)
+        game.opponent_rank = "#8"
+        self.assertIn("SEQUENCE:1", event_lines(game, state, now))
+        self.assertEqual(list(state), [self.canonical_uid])
+
+    def test_kickoff_confirmation_does_not_change_uid(self) -> None:
+        pending = parse_osu_schedule(texas_schedule("#4 Texas", "TBA"), 2026)[0]
+        confirmed = parse_osu_schedule(texas_schedule("Texas"), 2026)[0]
+        self.assertEqual(pending.uid, confirmed.uid)
+        self.assertFalse(pending.time_confirmed)
+        self.assertTrue(confirmed.time_confirmed)
+
+    def test_published_duplicate_is_cancelled_in_both_feeds_idempotently(self) -> None:
+        now = datetime(2026, 9, 29, tzinfo=UTC)
+        game = parse_osu_schedule(texas_schedule("#4 Texas"), 2026)[0]
+        # September 23 state: original sequence 4 and duplicate sequence 1.
+        state = {
+            self.canonical_uid: {"fingerprint": "original", "sequence": 4, "modified": "20260909T195207Z"},
+            self.duplicate_uid: {"fingerprint": "duplicate", "sequence": 1, "modified": "20260923T203047Z"},
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "site"
+            state_path = Path(directory) / "state.json"
+            state_path.write_text(json.dumps(state))
+            write_feeds([game], output, state_path, now)
+            saved_state = state_path.read_text()
+            first_feeds = {}
+            for name in ("ohio-state", "football"):
+                feed = (output / f"{name}.ics").read_text()
+                first_feeds[name] = feed
+                events = [part.split("END:VEVENT")[0] for part in feed.split("BEGIN:VEVENT")[1:]]
+                self.assertEqual(len(events), 2)
+                canonical, cancelled = events
+                self.assertIn(f"UID:{self.canonical_uid}", canonical)
+                self.assertIn("SEQUENCE:5", canonical)
+                self.assertNotIn("STATUS:CANCELLED", canonical)
+                self.assertIn(f"UID:{self.duplicate_uid}", cancelled)
+                self.assertIn("STATUS:CANCELLED", cancelled)
+                self.assertIn("SEQUENCE:2", cancelled)
+                self.assertIn("DTSTART:20260912T233000Z", cancelled)
+            for name in ("49ers", "patriots"):
+                self.assertNotIn(self.duplicate_uid, (output / f"{name}.ics").read_text())
+            write_feeds([game], output, state_path, now + timedelta(days=7))
+            self.assertEqual(state_path.read_text(), saved_state)
+            for name, feed in first_feeds.items():
+                self.assertEqual((output / f"{name}.ics").read_text(), feed)
+
+    def test_fresh_state_does_not_create_duplicate_cancellation(self) -> None:
+        game = parse_osu_schedule(texas_schedule("#4 Texas"), 2026)[0]
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "site"
+            write_feeds([game], output, Path(directory) / "state.json", datetime(2026, 9, 29, tzinfo=UTC))
+            feed = (output / "ohio-state.ics").read_text()
+            self.assertEqual(feed.count("BEGIN:VEVENT"), 1)
+            self.assertNotIn(self.duplicate_uid, feed)
 
 
 class CalendarFeedTests(unittest.TestCase):
