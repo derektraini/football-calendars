@@ -47,6 +47,23 @@ The refresh job refuses to replace a previously generated feed with an empty
 schedule. It stores event fingerprints in `data/feed-state.json`, keeping UIDs
 stable and incrementing `SEQUENCE` only after a material event change.
 
+Schedule-provided rank prefixes (such as `#4 Texas`) are stripped before
+opponent identity, UID hashing, and poll lookup. Displayed ranks come only from
+the selected AP/CFP enrichment, so changing a schedule prefix cannot create a
+new event or duplicate a rank in its title.
+
+The September 2026 Texas event returns to its original UID
+`football-calendar-college-football-osu-34c055f97199cd67@local` and continues that
+UID's stored sequence. If the state contains the mistakenly published UID
+`football-calendar-college-football-osu-45b8ca68d0259b49@local`, both the Ohio
+State and combined feeds also publish a `STATUS:CANCELLED` event under that UID
+with an incremented sequence. This cancellation is retained while the canonical
+game remains in the schedule; later refreshes keep its sequence and timestamp
+unchanged. Fresh state does not create the duplicate. Clients that ignore
+cancellation entries may need their subscription removed and added again to
+clear a cached duplicate. Existing state and published feeds are repaired by
+the next normal refresh; this change does not redefine historical-ranking policy.
+
 ## Publishing
 
 1. Create a **public** GitHub repository from this folder and push it.
