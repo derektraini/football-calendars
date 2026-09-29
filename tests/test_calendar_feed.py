@@ -5,9 +5,10 @@ import tempfile
 import unittest
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
+from unittest.mock import patch
 
 from scripts.calendar_feed import (
-    Game, enrich, event_lines, load_fixture, normalized_team_name, parse_osu_schedule,
+    Game, enrich, event_lines, load_fixture, main, normalized_team_name, parse_osu_schedule,
     require_complete_schedule, select_ranking, unranked_team_name, write_feeds,
 )
 
@@ -193,6 +194,63 @@ class CalendarFeedTests(unittest.TestCase):
         lines = event_lines(matchup, {}, self.now)
         self.assertIn("SUMMARY:#4 Ohio State Buckeyes at #8 Texas Longhorns", lines)
         self.assertTrue(any("Rankings: Ohio State #4\\; Texas Longhorns #8 (AP Top 25)" in line for line in lines))
+
+    def test_completed_college_game_keeps_last_pregame_ranking_snapshot(self) -> None:
+        state: dict[str, object] = {}
+        upcoming = Game(**{**self.games[0].__dict__, "game_date": date(2026, 9, 5)})
+        first = event_lines(upcoming, state, datetime(2026, 9, 4, 18, 0, tzinfo=UTC))
+        completed = Game(**{
+            **upcoming.__dict__, "rank": "#7", "opponent_rank": "#9", "rank_source": "AP Top 25",
+        })
+        historical = event_lines(completed, state, datetime(2026, 9, 8, 18, 0, tzinfo=UTC))
+        self.assertEqual(next(line for line in first if line.startswith("UID:")), next(line for line in historical if line.startswith("UID:")))
+        self.assertIn("SUMMARY:#4 Ohio State Buckeyes at Texas Longhorns", historical)
+        self.assertIn("SEQUENCE:0", historical)
+
+    def test_upcoming_college_game_ranking_updates_remain_material(self) -> None:
+        state: dict[str, object] = {}
+        game = Game(**{**self.games[0].__dict__, "game_date": date(2026, 9, 12)})
+        event_lines(game, state, datetime(2026, 9, 4, 18, 0, tzinfo=UTC))
+        revised = Game(**{**game.__dict__, "rank": "#7"})
+        lines = event_lines(revised, state, datetime(2026, 9, 5, 18, 0, tzinfo=UTC))
+        self.assertIn("SEQUENCE:1", lines)
+
+    def test_live_refresh_uses_pacific_day_after_utc_midnight(self) -> None:
+        now = datetime(2026, 9, 30, 0, 30, tzinfo=UTC)  # September 29 in Pacific.
+        with patch("scripts.calendar_feed.datetime") as clock, \
+                patch("scripts.calendar_feed.get_live_games", return_value=self.games) as live_games, \
+                patch("scripts.calendar_feed.write_feeds"), \
+                patch("sys.argv", ["calendar_feed.py", "--output", "/unused"]):
+            clock.now.return_value = now
+            self.assertEqual(main(), 0)
+        live_games.assert_called_once_with(date(2026, 9, 29))
+
+    def test_completed_game_does_not_receive_current_poll(self) -> None:
+        game = Game(**{**self.games[0].__dict__, "game_date": date(2026, 9, 5),
+                       "rank": None, "opponent_rank": None, "rank_source": None})
+        enrich([game], {"194": 7}, {"texaslonghorns": 9}, "AP Top 25", {}, date(2026, 9, 8))
+        self.assertIsNone(game.rank)
+        self.assertIsNone(game.opponent_rank)
+        self.assertIsNone(game.rank_source)
+
+    def test_unranked_pregame_snapshot_stays_unranked_after_completion(self) -> None:
+        state = {}
+        game = Game(**{**self.games[0].__dict__, "game_date": date(2026, 9, 5),
+                       "rank": None, "opponent_rank": None, "rank_source": None})
+        first = event_lines(game, state, datetime(2026, 9, 4, 18, tzinfo=UTC))
+        game.rank, game.opponent_rank, game.rank_source = "#7", "#9", "AP Top 25"
+        self.assertEqual(event_lines(game, state, datetime(2026, 9, 8, 18, tzinfo=UTC)), first)
+
+    def test_legacy_state_without_snapshot_settles_after_one_revision(self) -> None:
+        state = {}
+        game = Game(**{**self.games[0].__dict__, "game_date": date(2026, 9, 5)})
+        event_lines(game, state, datetime(2026, 9, 4, 18, tzinfo=UTC))
+        del state[game.uid]["ranking_snapshot"]
+        completed = Game(**{**game.__dict__, "rank": None, "opponent_rank": None, "rank_source": None})
+        first = event_lines(completed, state, datetime(2026, 9, 8, 18, tzinfo=UTC))
+        self.assertIn("SEQUENCE:1", first)
+        self.assertNotIn("#4", "\n".join(first))
+        self.assertEqual(event_lines(completed, state, datetime(2026, 9, 15, 18, tzinfo=UTC)), first)
 
     def test_incomplete_schedule_fails_closed(self) -> None:
         with self.assertRaisesRegex(ValueError, "Ohio State provider returned an incomplete schedule"):
