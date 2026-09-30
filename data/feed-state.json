@@ -1,68 +1,112 @@
 {
   "football-calendar-college-football-osu-3061aedc40c74935@local": {
-    "fingerprint": "237077f9a0278ff05251f28fa654a96f258c63dc6c52eea040ff9b2e09902255",
-    "modified": "20260923T203047Z",
-    "sequence": 6
+    "fingerprint": "c6230c2689bacb34d6e6d71fd86b8407940b7f6db86665231aba2cbecf10501e",
+    "modified": "20260930T212728Z",
+    "ranking_snapshot": {
+      "opponent_rank": "#6",
+      "rank": "#5",
+      "rank_source": "AP Top 25"
+    },
+    "sequence": 7
   },
   "football-calendar-college-football-osu-34c055f97199cd67@local": {
-    "fingerprint": "e810a4556b3d560e609f5bd23799da6be28da224a36a8f25690434f95ed4eba8",
-    "modified": "20260909T195207Z",
-    "sequence": 4
+    "fingerprint": "eb70069a2803f06f4d7872704342cf958c4c60532b273bc46729bfd6fcddcde9",
+    "modified": "20260930T212728Z",
+    "ranking_snapshot": null,
+    "sequence": 5
   },
   "football-calendar-college-football-osu-45b8ca68d0259b49@local": {
-    "fingerprint": "597bf7dd96cbaab724d6f4692ef93316500087dee81d04d342bce2905680300a",
-    "modified": "20260923T203047Z",
-    "sequence": 1
+    "fingerprint": "superseded-by:football-calendar-college-football-osu-34c055f97199cd67@local",
+    "modified": "20260930T212728Z",
+    "sequence": 2
   },
   "football-calendar-college-football-osu-68dc9697a20f382a@local": {
-    "fingerprint": "ecc32763f252dba7b4f0e2a52c8218705d50db55d715d4075e2755a8e9653eeb",
-    "modified": "20260923T203047Z",
-    "sequence": 5
+    "fingerprint": "301a6f192d880147c70a76674c1be1461507fcfcb57bb6a2a069922bd40febbc",
+    "modified": "20260930T212728Z",
+    "ranking_snapshot": null,
+    "sequence": 6
   },
   "football-calendar-college-football-osu-7758fb4b98f39a2a@local": {
-    "fingerprint": "18af5fd56b498c4054b6c6d250c9da5e95afa6fbbb1d525132ceb65b34157d5a",
-    "modified": "20260923T203047Z",
-    "sequence": 6
+    "fingerprint": "92590bf52a5aab788c304215120b01ae2ac6f7648a0388dc934ecc7496f82424",
+    "modified": "20260930T212728Z",
+    "ranking_snapshot": {
+      "opponent_rank": null,
+      "rank": "#5",
+      "rank_source": "AP Top 25"
+    },
+    "sequence": 7
   },
   "football-calendar-college-football-osu-9454bba023f86e90@local": {
-    "fingerprint": "45cc93867ec68b87c46b9363bec92b874e92d5511210b99021b3fcf3511fa8a3",
-    "modified": "20260923T203047Z",
-    "sequence": 5
+    "fingerprint": "f82f2f82999cbdaccada102d4a9ebc15490f664a25bc93560c053431d9832274",
+    "modified": "20260930T212728Z",
+    "ranking_snapshot": {
+      "opponent_rank": null,
+      "rank": "#5",
+      "rank_source": "AP Top 25"
+    },
+    "sequence": 6
   },
   "football-calendar-college-football-osu-aa16bcedfdf4e52f@local": {
-    "fingerprint": "7cb2225bae8c3e83bb15f6bbbcda48f02eb597c6b0417b8c8f8edc0e1e019c71",
-    "modified": "20260923T203047Z",
-    "sequence": 6
+    "fingerprint": "98977bf919b70c63c0b999eb046ab972a75795bd73e769541b952eacb5ce3e9f",
+    "modified": "20260930T212728Z",
+    "ranking_snapshot": {
+      "opponent_rank": "#14",
+      "rank": "#5",
+      "rank_source": "AP Top 25"
+    },
+    "sequence": 7
   },
   "football-calendar-college-football-osu-b255b9b28bfe855f@local": {
-    "fingerprint": "bc9bd38c221890209a17b41e25afa299db0f316ad2ae3a39b3a35b99e22866fc",
-    "modified": "20260923T203047Z",
-    "sequence": 5
+    "fingerprint": "ca81bad95f5618d4723f520d25c47d2db35a309a3edb6972381e61295a4f20cd",
+    "modified": "20260930T212728Z",
+    "ranking_snapshot": {
+      "opponent_rank": null,
+      "rank": "#5",
+      "rank_source": "AP Top 25"
+    },
+    "sequence": 6
   },
   "football-calendar-college-football-osu-bf880981161a7fb0@local": {
-    "fingerprint": "f8badb72cf708d0a09b64d4d9764157b02191b76f1e5cb273d0cd71236bb9e67",
-    "modified": "20260923T203047Z",
-    "sequence": 5
+    "fingerprint": "8096ae0c703a2cc1c538057a318a0727ebaf4cb3c14c9edfefb96f8b939f76ca",
+    "modified": "20260930T212728Z",
+    "ranking_snapshot": {
+      "opponent_rank": null,
+      "rank": "#5",
+      "rank_source": "AP Top 25"
+    },
+    "sequence": 6
   },
   "football-calendar-college-football-osu-c0476526b70fb978@local": {
-    "fingerprint": "277d7e9b0fe22875bad9b07ffb91431f976ff5a362613ede9551a81316617fd8",
-    "modified": "20260923T203047Z",
-    "sequence": 5
+    "fingerprint": "1b742026ada3905a94c328ade6e4520f7f5c8c0eaf21ba561580139a29d56d24",
+    "modified": "20260930T212728Z",
+    "ranking_snapshot": null,
+    "sequence": 6
   },
   "football-calendar-college-football-osu-c7422a697cc32118@local": {
-    "fingerprint": "2d1f8b4a0810befa0e49b9daf81455ce644277410759ca37719f7ef06c3142fa",
-    "modified": "20260923T203047Z",
-    "sequence": 5
+    "fingerprint": "d8a08330f0410cbbc7df87e3fe69d99cf46c756d9c889183fed0edd90520228e",
+    "modified": "20260930T212728Z",
+    "ranking_snapshot": {
+      "opponent_rank": "#18",
+      "rank": "#5",
+      "rank_source": "AP Top 25"
+    },
+    "sequence": 6
   },
   "football-calendar-college-football-osu-dfb5c0cd9e06375d@local": {
-    "fingerprint": "b91cc517e7532758d2f623a169cd218e6a815300a8ae26274dfe71f5ae3dd257",
-    "modified": "20260923T203047Z",
-    "sequence": 5
+    "fingerprint": "d5488063238d4731be85fff07af83fde2703866b105f1ca1a73207eb2558c7f6",
+    "modified": "20260930T212728Z",
+    "ranking_snapshot": null,
+    "sequence": 6
   },
   "football-calendar-college-football-osu-f1b30b5095bcff25@local": {
-    "fingerprint": "1a3e7eb5f17b6488a2328e8a186c1809b85422b4e0d2c2d2ada3e09e4b748e48",
-    "modified": "20260923T203047Z",
-    "sequence": 6
+    "fingerprint": "fe5f663ed5c8ef7c8d10748bd7bc9daf2169ccbe7144e2d9d02f3d92e36ab105",
+    "modified": "20260930T212728Z",
+    "ranking_snapshot": {
+      "opponent_rank": "#15",
+      "rank": "#5",
+      "rank_source": "AP Top 25"
+    },
+    "sequence": 7
   },
   "football-calendar-nfl-401872656@local": {
     "fingerprint": "1ffe6599cc85bd64d46fbc50789889595285c7b0a05ad2ba8c896ba61175cb13",
