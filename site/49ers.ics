@@ -73,9 +73,9 @@ DESCRIPTION:Regular Season • Week 1\nAway • Neutral site\nVenue: Melbou
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401872942@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:Miami Dolphins at San Francisco 49ers
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -84,14 +84,14 @@ DTEND:20260920T234000Z
 LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401872942/dolphins-49ers
 DESCRIPTION:Regular Season • Week 2\nHome\nVenue: Levi's Stadium\nTV/stre
- am: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401872942/dolphins
+ am: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401872942/dolphins
  -49ers
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401872958@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:Arizona Cardinals at San Francisco 49ers
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -100,7 +100,7 @@ DTEND:20260927T232000Z
 LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401872958/cardinals-49ers
 DESCRIPTION:Regular Season • Week 3\nHome\nVenue: Levi's Stadium\nTV/stre
- am: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401872958/cardinal
+ am: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401872958/cardinal
  s-49ers
 END:VEVENT
 BEGIN:VEVENT
@@ -121,9 +121,9 @@ DESCRIPTION:Regular Season • Week 4\nHome\nVenue: Levi's Stadium\nTV/stre
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401872992@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:San Francisco 49ers at Seattle Seahawks
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -132,7 +132,7 @@ DTEND:20261011T234000Z
 LOCATION:Lumen Field\, Seattle\, WA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401872992/49ers-seahawks
 DESCRIPTION:Regular Season • Week 5\nAway\nVenue: Lumen Field\nTV/stream:
-  FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401872992/49ers-seaha
+  Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401872992/49ers-seaha
  wks
 END:VEVENT
 BEGIN:VEVENT
@@ -153,9 +153,9 @@ DESCRIPTION:Regular Season • Week 6\nHome\nVenue: Levi's Stadium\nTV/stre
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873017@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:San Francisco 49ers at Atlanta Falcons
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -164,7 +164,7 @@ DTEND:20261025T201500Z
 LOCATION:Mercedes-Benz Stadium\, Atlanta\, GA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873017/49ers-falcons
 DESCRIPTION:Regular Season • Week 7\nAway\nVenue: Mercedes-Benz Stadium\n
- TV/stream: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401873017/4
+ TV/stream: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401873017/4
  9ers-falcons
 END:VEVENT
 BEGIN:VEVENT
@@ -185,9 +185,9 @@ DESCRIPTION:Regular Season • Week 9\nHome\nVenue: Levi's Stadium\nTV/stre
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873063@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:San Francisco 49ers at Dallas Cowboys
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -196,7 +196,7 @@ DTEND:20261116T004000Z
 LOCATION:AT&T Stadium\, Arlington\, TX\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873063/49ers-cowboys
 DESCRIPTION:Regular Season • Week 10\nAway\nVenue: AT&T Stadium\nTV/strea
- m: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401873063/49ers-cow
+ m: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401873063/49ers-cow
  boys
 END:VEVENT
 BEGIN:VEVENT
@@ -217,9 +217,9 @@ DESCRIPTION:Regular Season • Week 11\nHome • Neutral site\nVenue: Estad
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873091@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:Seattle Seahawks at San Francisco 49ers
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -228,14 +228,14 @@ DTEND:20261130T004000Z
 LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873091/seahawks-49ers
 DESCRIPTION:Regular Season • Week 12\nHome\nVenue: Levi's Stadium\nTV/str
- eam: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401873091/seahawk
+ eam: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401873091/seahawk
  s-49ers
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873095@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:San Francisco 49ers at New York Giants
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -244,14 +244,14 @@ DTEND:20261206T211500Z
 LOCATION:MetLife Stadium\, East Rutherford\, NJ\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873095/49ers-giants
 DESCRIPTION:Regular Season • Week 13\nAway\nVenue: MetLife Stadium\nTV/st
- ream: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401873095/49ers-
+ ream: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401873095/49ers-
  giants
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873120@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:Los Angeles Rams at San Francisco 49ers
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -260,7 +260,7 @@ DTEND:20261214T004000Z
 LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873120/rams-49ers
 DESCRIPTION:Regular Season • Week 14\nHome\nVenue: Levi's Stadium\nTV/str
- eam: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401873120/rams-49
+ eam: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401873120/rams-49
  ers
 END:VEVENT
 BEGIN:VEVENT

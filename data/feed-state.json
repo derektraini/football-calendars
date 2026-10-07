@@ -1,13 +1,13 @@
 {
   "football-calendar-college-football-osu-3061aedc40c74935@local": {
-    "fingerprint": "c6230c2689bacb34d6e6d71fd86b8407940b7f6db86665231aba2cbecf10501e",
-    "modified": "20260930T212728Z",
+    "fingerprint": "bd75398cec4cb32a04a0a06fab25898a579969c5b6bea49a0b7c9578db32aa97",
+    "modified": "20261007T220500Z",
     "ranking_snapshot": {
-      "opponent_rank": "#6",
+      "opponent_rank": "#7",
       "rank": "#5",
       "rank_source": "AP Top 25"
     },
-    "sequence": 7
+    "sequence": 8
   },
   "football-calendar-college-football-osu-34c055f97199cd67@local": {
     "fingerprint": "eb70069a2803f06f4d7872704342cf958c4c60532b273bc46729bfd6fcddcde9",
@@ -83,14 +83,14 @@
     "sequence": 6
   },
   "football-calendar-college-football-osu-c7422a697cc32118@local": {
-    "fingerprint": "d8a08330f0410cbbc7df87e3fe69d99cf46c756d9c889183fed0edd90520228e",
-    "modified": "20260930T212728Z",
+    "fingerprint": "01c8ddeab4451d7dee474076d13eed3f3dfd940bd03799e771c4b6d4f24dc8a7",
+    "modified": "20261007T220500Z",
     "ranking_snapshot": {
-      "opponent_rank": "#18",
+      "opponent_rank": "#19",
       "rank": "#5",
       "rank_source": "AP Top 25"
     },
-    "sequence": 6
+    "sequence": 7
   },
   "football-calendar-college-football-osu-dfb5c0cd9e06375d@local": {
     "fingerprint": "d5488063238d4731be85fff07af83fde2703866b105f1ca1a73207eb2558c7f6",
@@ -99,14 +99,14 @@
     "sequence": 6
   },
   "football-calendar-college-football-osu-f1b30b5095bcff25@local": {
-    "fingerprint": "fe5f663ed5c8ef7c8d10748bd7bc9daf2169ccbe7144e2d9d02f3d92e36ab105",
-    "modified": "20260930T212728Z",
+    "fingerprint": "4cbf43fb7b8614ec6648dcbc7f0f3df618ff02fc045fc644d7db21ab898632ea",
+    "modified": "20261007T220500Z",
     "ranking_snapshot": {
-      "opponent_rank": "#15",
+      "opponent_rank": "#13",
       "rank": "#5",
       "rank_source": "AP Top 25"
     },
-    "sequence": 7
+    "sequence": 8
   },
   "football-calendar-nfl-401872656@local": {
     "fingerprint": "1ffe6599cc85bd64d46fbc50789889595285c7b0a05ad2ba8c896ba61175cb13",
@@ -119,9 +119,9 @@
     "sequence": 3
   },
   "football-calendar-nfl-401872942@local": {
-    "fingerprint": "e1283a2ea9e8774dee2051fb419c9820048bd710b913b87cb911ab4fffab8f53",
-    "modified": "20260916T213036Z",
-    "sequence": 3
+    "fingerprint": "3ebbdef16f59c66f7634a24301700c70ee2e27488f3d754939cb3baacf335be3",
+    "modified": "20261007T220500Z",
+    "sequence": 4
   },
   "football-calendar-nfl-401872946@local": {
     "fingerprint": "0d79e18bfc028fc4a4c31bc1a10f8ad1a2feef425ed0945927a3e090d9290c7b",
@@ -134,9 +134,9 @@
     "sequence": 3
   },
   "football-calendar-nfl-401872958@local": {
-    "fingerprint": "ec39b9be501b89cd651d65fdb9be10746473a81f4de02e183a568a61483cae2e",
-    "modified": "20260916T213036Z",
-    "sequence": 3
+    "fingerprint": "c68e9b3007bf72790a4703743ad17883227ee24aee114b1e0daa80c3d5588a3f",
+    "modified": "20261007T220500Z",
+    "sequence": 4
   },
   "football-calendar-nfl-401872971@local": {
     "fingerprint": "0b4beb58ecc6129631a812d3204412c77ba9eab32045da88eb90ca2bf26ad708",
@@ -154,9 +154,9 @@
     "sequence": 3
   },
   "football-calendar-nfl-401872992@local": {
-    "fingerprint": "448a75c1daee421fba35e5e71e055a77afbc034ba60f1e270361f38a65f2dc25",
-    "modified": "20260916T213036Z",
-    "sequence": 3
+    "fingerprint": "f269e93853851a1fa05adb108d02ae09bb2c38fe008ab2f9816cc977a552c234",
+    "modified": "20261007T220500Z",
+    "sequence": 4
   },
   "football-calendar-nfl-401873001@local": {
     "fingerprint": "413844f15b45023d93b9467a71bca339832a46ebf4f1110f2869524f42352ab9",
@@ -174,9 +174,9 @@
     "sequence": 3
   },
   "football-calendar-nfl-401873017@local": {
-    "fingerprint": "cc79c1e1a5201624a1fa5a1a31cfc56205d2d849fc80bf538c8d618ba734add5",
-    "modified": "20260916T213036Z",
-    "sequence": 3
+    "fingerprint": "14fe8e51c2636da3e4a10896663b7bc8d7c81cfb3e5719c3bbab9ccd32c90bd4",
+    "modified": "20261007T220500Z",
+    "sequence": 4
   },
   "football-calendar-nfl-401873034@local": {
     "fingerprint": "9cdbc1d51f839074dad004d6d33dbbf56f2e90de4e2483844f9c2b6fab48be1a",
@@ -189,19 +189,19 @@
     "sequence": 3
   },
   "football-calendar-nfl-401873049@local": {
-    "fingerprint": "99d634d416fa16407d201ece33e3616e6ca0227d459e69d79b0c5a6a288dfae7",
-    "modified": "20260916T213036Z",
-    "sequence": 3
+    "fingerprint": "b31d32c0ee95500a81ee1937a10616aa1d017b1a87c07b8fd932bd8aed02d4cd",
+    "modified": "20261007T220500Z",
+    "sequence": 4
   },
   "football-calendar-nfl-401873053@local": {
-    "fingerprint": "c4904528b6b2896ef197b49ed20db3eb160162fa59c142a8c3601a82e25e0b56",
-    "modified": "20260916T213036Z",
-    "sequence": 3
+    "fingerprint": "02a984bded7dbcdae853e4279ec99fdbea8d03d8f322dee445d146d8553a5fdd",
+    "modified": "20261007T220500Z",
+    "sequence": 4
   },
   "football-calendar-nfl-401873063@local": {
-    "fingerprint": "d5d25ca69958a637ead6f5850de3aaef324b45fc1d46ff68f92f59068ee3de6c",
-    "modified": "20260916T213036Z",
-    "sequence": 3
+    "fingerprint": "273fe70f659e003677f15bc6685ec763a3ef1390375a5fc90bc6f55aff077692",
+    "modified": "20261007T220500Z",
+    "sequence": 4
   },
   "football-calendar-nfl-401873077@local": {
     "fingerprint": "55504eeebd2bbaa6cfe9433802827b260481e1648cefe7682967356a39042a18",
@@ -209,9 +209,9 @@
     "sequence": 3
   },
   "football-calendar-nfl-401873091@local": {
-    "fingerprint": "91c96538757088d71392efd8f2cb5c73608dd31dbdac4e3c81f8a685992d1438",
-    "modified": "20260916T213036Z",
-    "sequence": 3
+    "fingerprint": "07b6fbc5d7f023b7fb359be48105cbd30879219808d4cfe801aa82b3438d9b33",
+    "modified": "20261007T220500Z",
+    "sequence": 4
   },
   "football-calendar-nfl-401873093@local": {
     "fingerprint": "333d14ff6df0957663e697dce0446750b2e1f7d7f3c3ad5c73f9882aa2dd8ee9",
@@ -219,9 +219,9 @@
     "sequence": 3
   },
   "football-calendar-nfl-401873095@local": {
-    "fingerprint": "2f334264bfbd7d622bbd37432ca87f907b86ccef90595b266ae9561073a03140",
-    "modified": "20260916T213036Z",
-    "sequence": 3
+    "fingerprint": "24ba1d8678612d45f7a50ec3e71c275361fc1b9664cc0fe9cb3c0e2748390944",
+    "modified": "20261007T220500Z",
+    "sequence": 4
   },
   "football-calendar-nfl-401873105@local": {
     "fingerprint": "a9deeab3b8f5d55acbfe8af46e08acb0dd20434b7bce1a9cdb6f6078ad4ce9a7",
@@ -234,9 +234,9 @@
     "sequence": 3
   },
   "football-calendar-nfl-401873120@local": {
-    "fingerprint": "2da659ce695c05ef6adc115ec460a97d7e6b39c1285c738d31f5d4c01dba80e2",
-    "modified": "20260916T213036Z",
-    "sequence": 3
+    "fingerprint": "7eeb85b3a5c3e27eeb27e1619fd742355b16b7bfc295bdac1df67fc1348cce26",
+    "modified": "20261007T220500Z",
+    "sequence": 4
   },
   "football-calendar-nfl-401873124@local": {
     "fingerprint": "715d1a002553a42d12db5cbf18bc4c0c2ca978a32e515f9656222891aa22c081",

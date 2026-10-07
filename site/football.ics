@@ -191,9 +191,9 @@ DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nSource: https://ohio
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401872942@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:Miami Dolphins at San Francisco 49ers
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -202,7 +202,7 @@ DTEND:20260920T234000Z
 LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401872942/dolphins-49ers
 DESCRIPTION:Regular Season • Week 2\nHome\nVenue: Levi's Stadium\nTV/stre
- am: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401872942/dolphins
+ am: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401872942/dolphins
  -49ers
 END:VEVENT
 BEGIN:VEVENT
@@ -254,9 +254,9 @@ DESCRIPTION:Regular Season • Week 3\nAway\nVenue: EverBank Stadium\nTV/st
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401872958@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:Arizona Cardinals at San Francisco 49ers
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -265,7 +265,7 @@ DTEND:20260927T232000Z
 LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401872958/cardinals-49ers
 DESCRIPTION:Regular Season • Week 3\nHome\nVenue: Levi's Stadium\nTV/stre
- am: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401872958/cardinal
+ am: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401872958/cardinal
  s-49ers
 END:VEVENT
 BEGIN:VEVENT
@@ -350,9 +350,9 @@ DESCRIPTION:Regular Season • Week 5\nHome\nVenue: Gillette Stadium\nTV/st
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401872992@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:San Francisco 49ers at Seattle Seahawks
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -361,22 +361,22 @@ DTEND:20261011T234000Z
 LOCATION:Lumen Field\, Seattle\, WA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401872992/49ers-seahawks
 DESCRIPTION:Regular Season • Week 5\nAway\nVenue: Lumen Field\nTV/stream:
-  FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401872992/49ers-seaha
+  Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401872992/49ers-seaha
  wks
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-3061aedc40c74935@local
-DTSTAMP:20260930T212728Z
-LAST-MODIFIED:20260930T212728Z
-SEQUENCE:7
-SUMMARY:#5 Ohio State Buckeyes at #6 Indiana — Kickoff TBD
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:8
+SUMMARY:#5 Ohio State Buckeyes at #7 Indiana — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261017
 DTEND;VALUE=DATE:20261018
 LOCATION:Bloomington\, Ind.
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #5\; Indiana #6 (AP 
+DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #5\; Indiana #7 (AP 
  Top 25)\nKickoff is not confirmed\; this all-day placeholder will become a
   timed event when announced.\nSource: https://ohiostatebuckeyes.com/sports
  /football/schedule/text
@@ -431,9 +431,9 @@ DESCRIPTION:Regular Season • Week 7\nAway\nVenue: Soldier Field\nTV/strea
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873017@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:San Francisco 49ers at Atlanta Falcons
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -442,22 +442,22 @@ DTEND:20261025T201500Z
 LOCATION:Mercedes-Benz Stadium\, Atlanta\, GA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873017/49ers-falcons
 DESCRIPTION:Regular Season • Week 7\nAway\nVenue: Mercedes-Benz Stadium\n
- TV/stream: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401873017/4
+ TV/stream: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401873017/4
  9ers-falcons
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-c7422a697cc32118@local
-DTSTAMP:20260930T212728Z
-LAST-MODIFIED:20260930T212728Z
-SEQUENCE:6
-SUMMARY:#5 Ohio State Buckeyes at #18 USC — Kickoff TBD
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:7
+SUMMARY:#5 Ohio State Buckeyes at #19 USC — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261101
 LOCATION:Los Angeles\, Calif.
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #5\; USC #18 (AP Top
+DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #5\; USC #19 (AP Top
   25)\nKickoff is not confirmed\; this all-day placeholder will become a ti
  med event when announced.\nSource: https://ohiostatebuckeyes.com/sports/fo
  otball/schedule/text
@@ -480,10 +480,10 @@ DESCRIPTION:Regular Season • Week 8\nAway\nVenue: Hard Rock Stadium\nTV/s
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-f1b30b5095bcff25@local
-DTSTAMP:20260930T212728Z
-LAST-MODIFIED:20260930T212728Z
-SEQUENCE:7
-SUMMARY:#15 Oregon at #5 Ohio State Buckeyes — Kickoff TBD
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:8
+SUMMARY:#13 Oregon at #5 Ohio State Buckeyes — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261107
@@ -491,7 +491,7 @@ DTEND;VALUE=DATE:20261108
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
 DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
-  #5\; Oregon #15 (AP Top 25)\nKickoff is not confirmed\; this all-day plac
+  #5\; Oregon #13 (AP Top 25)\nKickoff is not confirmed\; this all-day plac
  eholder will become a timed event when announced.\nSource: https://ohiosta
  tebuckeyes.com/sports/football/schedule/text
 END:VEVENT
@@ -513,9 +513,9 @@ DESCRIPTION:Regular Season • Week 9\nHome\nVenue: Levi's Stadium\nTV/stre
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873049@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:Green Bay Packers at New England Patriots
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,New England Patriots
@@ -524,7 +524,7 @@ DTEND:20261109T004000Z
 LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873049/packers-patriots
 DESCRIPTION:Regular Season • Week 9\nHome\nVenue: Gillette Stadium\nTV/st
- ream: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401873049/packer
+ ream: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401873049/packer
  s-patriots
 END:VEVENT
 BEGIN:VEVENT
@@ -546,9 +546,9 @@ DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873053@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:New England Patriots at Detroit Lions (Neutral site)
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,New England Patriots
@@ -557,14 +557,14 @@ DTEND:20261115T174500Z
 LOCATION:FC Bayern Munich Stadium\, Munich\, Germany
 URL:https://www.espn.com/nfl/game/_/gameId/401873053/patriots-lions
 DESCRIPTION:Regular Season • Week 10\nAway • Neutral site\nVenue: FC Ba
- yern Munich Stadium\nTV/stream: FOX\nSource: https://www.espn.com/nfl/game
+ yern Munich Stadium\nTV/stream: Fox\nSource: https://www.espn.com/nfl/game
  /_/gameId/401873053/patriots-lions
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873063@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:San Francisco 49ers at Dallas Cowboys
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -573,7 +573,7 @@ DTEND:20261116T004000Z
 LOCATION:AT&T Stadium\, Arlington\, TX\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873063/49ers-cowboys
 DESCRIPTION:Regular Season • Week 10\nAway\nVenue: AT&T Stadium\nTV/strea
- m: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401873063/49ers-cow
+ m: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401873063/49ers-cow
  boys
 END:VEVENT
 BEGIN:VEVENT
@@ -627,9 +627,9 @@ DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873091@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:Seattle Seahawks at San Francisco 49ers
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -638,7 +638,7 @@ DTEND:20261130T004000Z
 LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873091/seahawks-49ers
 DESCRIPTION:Regular Season • Week 12\nHome\nVenue: Levi's Stadium\nTV/str
- eam: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401873091/seahawk
+ eam: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401873091/seahawk
  s-49ers
 END:VEVENT
 BEGIN:VEVENT
@@ -659,9 +659,9 @@ DESCRIPTION:Regular Season • Week 12\nAway\nVenue: SoFi Stadium\nTV/strea
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873095@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:San Francisco 49ers at New York Giants
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -670,7 +670,7 @@ DTEND:20261206T211500Z
 LOCATION:MetLife Stadium\, East Rutherford\, NJ\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873095/49ers-giants
 DESCRIPTION:Regular Season • Week 13\nAway\nVenue: MetLife Stadium\nTV/st
- ream: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401873095/49ers-
+ ream: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401873095/49ers-
  giants
 END:VEVENT
 BEGIN:VEVENT
@@ -707,9 +707,9 @@ DESCRIPTION:Regular Season • Week 14\nHome\nVenue: Gillette Stadium\nTV/s
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873120@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:Los Angeles Rams at San Francisco 49ers
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -718,7 +718,7 @@ DTEND:20261214T004000Z
 LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873120/rams-49ers
 DESCRIPTION:Regular Season • Week 14\nHome\nVenue: Levi's Stadium\nTV/str
- eam: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401873120/rams-49
+ eam: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401873120/rams-49
  ers
 END:VEVENT
 BEGIN:VEVENT

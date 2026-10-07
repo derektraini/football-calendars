@@ -185,9 +185,9 @@ DESCRIPTION:Regular Season • Week 8\nAway\nVenue: Hard Rock Stadium\nTV/s
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873049@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:Green Bay Packers at New England Patriots
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,New England Patriots
@@ -196,14 +196,14 @@ DTEND:20261109T004000Z
 LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873049/packers-patriots
 DESCRIPTION:Regular Season • Week 9\nHome\nVenue: Gillette Stadium\nTV/st
- ream: FOX\nSource: https://www.espn.com/nfl/game/_/gameId/401873049/packer
+ ream: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401873049/packer
  s-patriots
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873053@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:4
 SUMMARY:New England Patriots at Detroit Lions (Neutral site)
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,New England Patriots
@@ -212,7 +212,7 @@ DTEND:20261115T174500Z
 LOCATION:FC Bayern Munich Stadium\, Munich\, Germany
 URL:https://www.espn.com/nfl/game/_/gameId/401873053/patriots-lions
 DESCRIPTION:Regular Season • Week 10\nAway • Neutral site\nVenue: FC Ba
- yern Munich Stadium\nTV/stream: FOX\nSource: https://www.espn.com/nfl/game
+ yern Munich Stadium\nTV/stream: Fox\nSource: https://www.espn.com/nfl/game
  /_/gameId/401873053/patriots-lions
 END:VEVENT
 BEGIN:VEVENT

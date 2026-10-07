@@ -111,44 +111,44 @@ DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-3061aedc40c74935@local
-DTSTAMP:20260930T212728Z
-LAST-MODIFIED:20260930T212728Z
-SEQUENCE:7
-SUMMARY:#5 Ohio State Buckeyes at #6 Indiana — Kickoff TBD
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:8
+SUMMARY:#5 Ohio State Buckeyes at #7 Indiana — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261017
 DTEND;VALUE=DATE:20261018
 LOCATION:Bloomington\, Ind.
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #5\; Indiana #6 (AP 
+DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #5\; Indiana #7 (AP 
  Top 25)\nKickoff is not confirmed\; this all-day placeholder will become a
   timed event when announced.\nSource: https://ohiostatebuckeyes.com/sports
  /football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-c7422a697cc32118@local
-DTSTAMP:20260930T212728Z
-LAST-MODIFIED:20260930T212728Z
-SEQUENCE:6
-SUMMARY:#5 Ohio State Buckeyes at #18 USC — Kickoff TBD
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:7
+SUMMARY:#5 Ohio State Buckeyes at #19 USC — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261101
 LOCATION:Los Angeles\, Calif.
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #5\; USC #18 (AP Top
+DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #5\; USC #19 (AP Top
   25)\nKickoff is not confirmed\; this all-day placeholder will become a ti
  med event when announced.\nSource: https://ohiostatebuckeyes.com/sports/fo
  otball/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-f1b30b5095bcff25@local
-DTSTAMP:20260930T212728Z
-LAST-MODIFIED:20260930T212728Z
-SEQUENCE:7
-SUMMARY:#15 Oregon at #5 Ohio State Buckeyes — Kickoff TBD
+DTSTAMP:20261007T220500Z
+LAST-MODIFIED:20261007T220500Z
+SEQUENCE:8
+SUMMARY:#13 Oregon at #5 Ohio State Buckeyes — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261107
@@ -156,7 +156,7 @@ DTEND;VALUE=DATE:20261108
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
 DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
-  #5\; Oregon #15 (AP Top 25)\nKickoff is not confirmed\; this all-day plac
+  #5\; Oregon #13 (AP Top 25)\nKickoff is not confirmed\; this all-day plac
  eholder will become a timed event when announced.\nSource: https://ohiosta
  tebuckeyes.com/sports/football/schedule/text
 END:VEVENT
