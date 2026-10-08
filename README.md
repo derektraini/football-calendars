@@ -39,6 +39,7 @@ has no color because it contains all three teams.
 ## Data sources and safeguards
 
 - Ohio State schedule: the official [Ohio State text schedule](https://ohiostatebuckeyes.com/sports/football/schedule/text)
+- Missing upcoming Ohio State kickoffs and broadcasts: the official [printable schedule](https://ohiostatebuckeyes.com/sports/football/schedule/print), matched by date, unranked opponent, and home/away. Confirmed text-schedule times take precedence; ambiguous or unconfirmed printable rows stay TBD. An unavailable or unparseable fallback fails the refresh before any feeds are written. Historical games are left unchanged.
 - NFL schedules and standings: public ESPN site data, isolated behind adapters
   because it is a convenient source but not a contractual public API
 - Every event also links back to its source/game page.
@@ -78,6 +79,9 @@ the next normal refresh; this change does not redefine historical-ranking policy
    https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY/patriots.ics
    https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY/football.ics
    ```
+
+Changes to `site/` pushed to `main` also deploy automatically, allowing verified
+feed corrections to publish immediately without waiting for the weekly refresh.
 
 Subscribe to one team feed *or* the combined feed—not both, or games will be
 duplicated. In macOS Calendar choose **File → New Calendar Subscription**, paste

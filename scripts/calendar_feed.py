@@ -18,6 +18,7 @@ from zoneinfo import ZoneInfo
 
 ESPN = "https://site.api.espn.com/apis/site/v2/sports/football"
 OHIO_STATE_SCHEDULE = "https://ohiostatebuckeyes.com/sports/football/schedule/text"
+OHIO_STATE_PRINT_SCHEDULE = "https://ohiostatebuckeyes.com/sports/football/schedule/print"
 CFP_FIRST_RELEASE = {2026: date(2026, 11, 3)}
 PACIFIC = ZoneInfo("America/Los_Angeles")
 EASTERN = ZoneInfo("America/New_York")
@@ -228,6 +229,47 @@ def normalized_team_name(name: str) -> str:
     return re.sub(r"[^a-z0-9]", "", unranked_team_name(name).casefold())
 
 
+def recover_osu_details(games: list[Game], html: str, today: date) -> None:
+    """Fill missing upcoming details from the official printable schedule.
+
+    Keep the text schedule's identity and confirmed times. Match all three
+    identity fields; never infer a kickoff from a date or an ambiguous row.
+    """
+    table = ScheduleTable()
+    table.feed(html)
+    details: dict[tuple[date, str, str], list[list[str]]] = {}
+    for cells in table.rows:
+        if len(cells) < 6:
+            continue
+        try:
+            day = datetime.strptime(cells[0], "%B %d, %Y").date()
+        except ValueError:
+            continue
+        key = (day, normalized_team_name(cells[3]), cells[2].casefold())
+        details.setdefault(key, []).append(cells)
+    if not details:
+        raise ValueError("Ohio State printable schedule contained no parseable games")
+    for game in games:
+        if game.game_date < today:
+            continue
+        rows = details.get((game.game_date, normalized_team_name(game.opponent), game.home_away), [])
+        if len(rows) != 1:
+            continue
+        cells = rows[0]
+        kickoff = cells[1].upper().replace(".", "").strip()
+        if kickoff == "NOON":
+            kickoff = "12:00 PM"
+        if not game.time_confirmed:
+            try:
+                local_time = datetime.strptime(kickoff, "%I:%M %p").time()
+            except ValueError:
+                continue
+            game.start = datetime.combine(game.game_date, local_time, EASTERN).astimezone(UTC)
+            game.time_confirmed = True
+        if not game.broadcasts and cells[5].upper() not in {"", "TBA", "TBD", "-"}:
+            game.broadcasts = tuple(part.strip() for part in cells[5].split(",") if part.strip())
+
+
 def select_ranking(payload: dict[str, Any], today: date) -> tuple[dict[str, int], dict[str, int], str | None]:
     """Return only the requested AP/CFP poll; never quietly substitute Coaches."""
     desired = "CFP" if today >= CFP_FIRST_RELEASE.get(today.year, date(today.year, 11, 1)) else "AP"
@@ -436,6 +478,7 @@ def require_complete_schedule(label: str, games: list[Game], minimum: int) -> No
 def get_live_games(today: date) -> list[Game]:
     osu = parse_osu_schedule(fetch_text(OHIO_STATE_SCHEDULE), today.year)
     require_complete_schedule("Ohio State", osu, 10)
+    recover_osu_details(osu, fetch_text(OHIO_STATE_PRINT_SCHEDULE), today)
     nfl_games: list[Game] = []
     nfl_season = current_nfl_season(today)
     for team in TEAMS[1:]:

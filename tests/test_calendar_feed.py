@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 from scripts.calendar_feed import (
     Game, enrich, event_lines, load_fixture, main, normalized_team_name, parse_osu_schedule,
-    require_complete_schedule, select_ranking, unranked_team_name, write_feeds,
+    recover_osu_details, require_complete_schedule, select_ranking, unranked_team_name, write_feeds,
 )
 
 
@@ -124,6 +124,68 @@ class OpponentIdentityTests(unittest.TestCase):
             feed = (output / "ohio-state.ics").read_text()
             self.assertEqual(feed.count("BEGIN:VEVENT"), 1)
             self.assertNotIn(self.duplicate_uid, feed)
+
+
+class OfficialKickoffTests(unittest.TestCase):
+    def game(self, kickoff="TBA"):
+        return parse_osu_schedule(texas_schedule("Maryland", kickoff).replace("Sep 12", "Oct 10").replace("Away", "Home"), 2026)[0]
+
+    def printable(self, kickoff="4:15 p.m.", opponent="#4 Maryland", day="October 10, 2026", side="Home"):
+        return (f"<table><tr><td>{day}</td><td>{kickoff}</td><td>{side}</td>"
+                f"<td>{opponent}</td><td>Columbus, Ohio | Ohio Stadium</td>"
+                "<td>Big Ten Network</td></tr></table>")
+
+    def test_confirmation_preserves_uid_and_increments_once_in_both_feeds(self):
+        game = self.game()
+        uid = game.uid
+        now = datetime(2026, 10, 8, tzinfo=UTC)
+        with tempfile.TemporaryDirectory() as directory:
+            output, state = Path(directory) / "site", Path(directory) / "state.json"
+            write_feeds([game], output, state, now)
+            recover_osu_details([game], self.printable(), now.date())
+            self.assertEqual(game.uid, uid)
+            self.assertEqual(game.start, datetime(2026, 10, 10, 20, 15, tzinfo=UTC))
+            write_feeds([game], output, state, now)
+            saved = state.read_text()
+            for name in ("ohio-state", "football"):
+                feed = (output / f"{name}.ics").read_text().replace("\n ", "")
+                self.assertIn(f"UID:{uid}", feed)
+                self.assertIn("SEQUENCE:1", feed)
+                self.assertIn("DTSTART:20261010T201500Z", feed)
+                self.assertIn("DTEND:20261010T234500Z", feed)
+                self.assertIn("TV/stream: Big Ten Network", feed)
+                self.assertNotIn("Kickoff TBD", feed)
+                self.assertNotIn("VALUE=DATE", feed)
+            recover_osu_details([game], self.printable(opponent="Maryland"), now.date())
+            write_feeds([game], output, state, now + timedelta(hours=1))
+            self.assertEqual(state.read_text(), saved)
+
+    def test_unconfirmed_malformed_unmatched_and_ambiguous_rows_stay_tbd(self):
+        cases = [self.printable(kickoff="TBA"), self.printable(kickoff="TBD"),
+                 self.printable(kickoff="4:15"), self.printable(opponent="Michigan"),
+                 self.printable(day="October 10, 2025"), self.printable(side="Away"),
+                 self.printable() + self.printable()]
+        for html in cases:
+            with self.subTest(html=html):
+                game = self.game()
+                recover_osu_details([game], html, date(2026, 10, 8))
+                self.assertFalse(game.time_confirmed)
+                self.assertIsNone(game.start)
+
+    def test_confirmed_primary_time_and_past_games_are_preserved(self):
+        game = self.game("NOON")
+        original = game.start
+        recover_osu_details([game], self.printable(), date(2026, 10, 8))
+        self.assertEqual(game.start, original)
+        self.assertEqual(game.broadcasts, ("Big Ten Network",))
+        past = self.game()
+        recover_osu_details([past], self.printable(), date(2026, 10, 11))
+        self.assertFalse(past.time_confirmed)
+        self.assertEqual(past.broadcasts, ())
+
+    def test_no_parseable_official_rows_fails_closed(self):
+        with self.assertRaises(ValueError):
+            recover_osu_details([self.game()], "<html>Service unavailable</html>", date(2026, 10, 8))
 
 
 class CalendarFeedTests(unittest.TestCase):
