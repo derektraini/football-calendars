@@ -317,20 +317,19 @@ DESCRIPTION:Regular Season • Week 4\nHome\nVenue: Levi's Stadium\nTV/stre
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-9454bba023f86e90@local
-DTSTAMP:20260930T212728Z
-LAST-MODIFIED:20260930T212728Z
-SEQUENCE:6
-SUMMARY:Maryland at #5 Ohio State Buckeyes — Kickoff TBD
+DTSTAMP:20261008T154731Z
+LAST-MODIFIED:20261008T154731Z
+SEQUENCE:7
+SUMMARY:Maryland at #5 Ohio State Buckeyes
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
-DTSTART;VALUE=DATE:20261010
-DTEND;VALUE=DATE:20261011
+DTSTART:20261010T201500Z
+DTEND:20261010T234500Z
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
-  #5\; Maryland Unranked (AP Top 25)\nKickoff is not confirmed\; this all-d
- ay placeholder will become a timed event when announced.\nSource: https://
- ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nTV/stream: Big Ten N
+ etwork\nRankings: Ohio State #5\; Maryland Unranked (AP Top 25)\nSource: h
+ ttps://ohiostatebuckeyes.com/sports/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401872986@local
@@ -611,9 +610,9 @@ DESCRIPTION:Regular Season • Week 11\nHome • Neutral site\nVenue: Estad
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-7758fb4b98f39a2a@local
-DTSTAMP:20260930T212728Z
-LAST-MODIFIED:20260930T212728Z
-SEQUENCE:7
+DTSTAMP:20261008T154731Z
+LAST-MODIFIED:20261008T154731Z
+SEQUENCE:8
 SUMMARY:Michigan at #5 Ohio State Buckeyes
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -621,9 +620,9 @@ DTSTART:20261128T170000Z
 DTEND:20261128T203000Z
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
-  #5\; Michigan Unranked (AP Top 25)\nSource: https://ohiostatebuckeyes.com
- /sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nTV/stream: FOX\, Fox
+  One\nRankings: Ohio State #5\; Michigan Unranked (AP Top 25)\nSource: htt
+ ps://ohiostatebuckeyes.com/sports/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873091@local
