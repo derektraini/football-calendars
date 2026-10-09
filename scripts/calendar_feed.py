@@ -163,6 +163,10 @@ def parse_espn_schedule(team: Team, payload: dict[str, Any]) -> list[Game]:
         known_time = bool(competition.get("timeValid", event.get("timeValid", False)))
         if not start:
             continue
+        # Confirmed kickoffs use Pacific for local calendar day. ESPN TBD
+        # placeholders are midnight Eastern (often 05:00Z), which is the prior
+        # evening in Pacific — use Eastern so all-day events keep the game date.
+        game_day = start.astimezone(PACIFIC if known_time else EASTERN).date()
         venue = competition.get("venue", {})
         address = venue.get("address", {})
         location = ", ".join(str(v) for v in (address.get("city"), address.get("state"), address.get("country")) if v)
@@ -173,7 +177,7 @@ def parse_espn_schedule(team: Team, payload: dict[str, Any]) -> list[Game]:
             season=int(event.get("season", {}).get("year") or start.year),
             season_type=str(event.get("seasonType", {}).get("name") or SEASON_TYPES.get(str(event.get("season", {}).get("type")), "Season")),
             week=str(event.get("week", {}).get("text") or event.get("week", {}).get("number") or ""),
-            start=start, game_date=start.astimezone(PACIFIC).date(), time_confirmed=known_time,
+            start=start, game_date=game_day, time_confirmed=known_time,
             venue=str(venue.get("fullName", "")), location=location,
             broadcasts=get_broadcasts(competition), url=first_desktop_link(event.get("links", [])),
             neutral=bool(competition.get("neutralSite", False)),
