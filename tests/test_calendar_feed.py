@@ -8,8 +8,9 @@ from pathlib import Path
 from unittest.mock import patch
 
 from scripts.calendar_feed import (
-    Game, enrich, event_lines, load_fixture, main, normalized_team_name, parse_osu_schedule,
-    recover_osu_details, require_complete_schedule, select_ranking, unranked_team_name, write_feeds,
+    Game, TEAMS, enrich, event_lines, load_fixture, main, normalized_team_name,
+    parse_espn_schedule, parse_osu_schedule, recover_osu_details, require_complete_schedule,
+    select_ranking, unranked_team_name, write_feeds,
 )
 
 
@@ -124,6 +125,75 @@ class OpponentIdentityTests(unittest.TestCase):
             feed = (output / "ohio-state.ics").read_text()
             self.assertEqual(feed.count("BEGIN:VEVENT"), 1)
             self.assertNotIn(self.duplicate_uid, feed)
+
+
+class EspnTbdDateTests(unittest.TestCase):
+    """ESPN marks TBD NFL games as midnight Eastern, often serialized as 05:00Z."""
+
+    patriots = next(team for team in TEAMS if team.slug == "patriots")
+
+    def espn_event(self, *, event_id: str, date: str, time_valid: bool, opponent_id="7",
+                   opponent="Denver Broncos", home_away="home", week=17) -> dict:
+        ours = {"homeAway": home_away, "team": {"id": self.patriots.espn_id, "displayName": self.patriots.name}}
+        them = {"homeAway": "away" if home_away == "home" else "home",
+                "team": {"id": opponent_id, "displayName": opponent}}
+        return {
+            "id": event_id,
+            "date": date,
+            "timeValid": time_valid,
+            "season": {"year": 2026, "type": 2},
+            "seasonType": {"name": "Regular Season"},
+            "week": {"number": week, "text": f"Week {week}"},
+            "competitions": [{
+                "date": date,
+                "timeValid": time_valid,
+                "competitors": [ours, them],
+                "venue": {"fullName": "Gillette Stadium", "address": {"city": "Foxborough", "state": "MA"}},
+                "broadcasts": [],
+            }],
+            "links": [],
+        }
+
+    def test_espn_0500z_tbd_placeholder_keeps_eastern_game_date(self) -> None:
+        # 05:00Z is midnight EST on Sunday Jan 3; Pacific is Saturday evening Jan 2.
+        game = parse_espn_schedule(self.patriots, {"events": [
+            self.espn_event(event_id="401-tbd-ne", date="2027-01-03T05:00Z", time_valid=False),
+        ]})[0]
+        self.assertFalse(game.time_confirmed)
+        self.assertEqual(game.game_date, date(2027, 1, 3))
+        lines = event_lines(game, {}, datetime(2026, 12, 20, tzinfo=UTC))
+        self.assertIn("DTSTART;VALUE=DATE:20270103", lines)
+        self.assertIn("DTEND;VALUE=DATE:20270104", lines)
+        self.assertIn("Kickoff TBD", "\n".join(lines))
+
+    def test_espn_tbd_date_correction_keeps_uid_and_bumps_sequence(self) -> None:
+        payload = {"events": [
+            self.espn_event(event_id="401-tbd-ne", date="2027-01-03T05:00Z", time_valid=False),
+        ]}
+        game = parse_espn_schedule(self.patriots, payload)[0]
+        # Simulate the previously published wrong Pacific-derived Saturday date.
+        wrong = Game(**{**game.__dict__, "game_date": date(2027, 1, 2)})
+        state: dict = {}
+        now = datetime(2026, 12, 20, tzinfo=UTC)
+        first = event_lines(wrong, state, now)
+        corrected = event_lines(game, state, now + timedelta(days=1))
+        self.assertEqual(
+            next(line for line in first if line.startswith("UID:")),
+            next(line for line in corrected if line.startswith("UID:")),
+        )
+        self.assertEqual(game.uid, wrong.uid)
+        self.assertIn("SEQUENCE:0", first)
+        self.assertIn("DTSTART;VALUE=DATE:20270102", first)
+        self.assertIn("SEQUENCE:1", corrected)
+        self.assertIn("DTSTART;VALUE=DATE:20270103", corrected)
+
+    def test_confirmed_espn_kickoff_still_uses_pacific_calendar_day(self) -> None:
+        # Sunday 8:20 PM ET = Monday 01:20Z; still Sunday evening in Pacific.
+        game = parse_espn_schedule(self.patriots, {"events": [
+            self.espn_event(event_id="401-timed-ne", date="2027-01-04T01:20Z", time_valid=True),
+        ]})[0]
+        self.assertTrue(game.time_confirmed)
+        self.assertEqual(game.game_date, date(2027, 1, 3))
 
 
 class OfficialKickoffTests(unittest.TestCase):
