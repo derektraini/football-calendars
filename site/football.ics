@@ -366,9 +366,9 @@ DESCRIPTION:Regular Season • Week 5\nAway\nVenue: Lumen Field\nTV/stream:
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-3061aedc40c74935@local
-DTSTAMP:20261014T204650Z
-LAST-MODIFIED:20261014T204650Z
-SEQUENCE:9
+DTSTAMP:20261021T204241Z
+LAST-MODIFIED:20261021T204241Z
+SEQUENCE:10
 SUMMARY:#4 Ohio State Buckeyes at #5 Indiana
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -376,9 +376,9 @@ DTSTART:20261017T160000Z
 DTEND:20261017T193000Z
 LOCATION:Bloomington\, Ind.
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nTV/stream: FOX\, Fox One\nRankings: Ohio 
- State #4\; Indiana #5 (AP Top 25)\nSource: https://ohiostatebuckeyes.com/s
- ports/football/schedule/text
+DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #4\; Indiana #5 (AP 
+ Top 25)\nSource: https://ohiostatebuckeyes.com/sports/football/schedule/te
+ xt
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873001@local
@@ -446,20 +446,19 @@ DESCRIPTION:Regular Season • Week 7\nAway\nVenue: Mercedes-Benz Stadium\n
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-c7422a697cc32118@local
-DTSTAMP:20261014T204650Z
-LAST-MODIFIED:20261014T204650Z
-SEQUENCE:8
-SUMMARY:#4 Ohio State Buckeyes at #19 USC — Kickoff TBD
+DTSTAMP:20261021T204241Z
+LAST-MODIFIED:20261021T204241Z
+SEQUENCE:9
+SUMMARY:#3 Ohio State Buckeyes at #16 USC
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
-DTSTART;VALUE=DATE:20261031
-DTEND;VALUE=DATE:20261101
+DTSTART:20261031T233000Z
+DTEND:20261101T030000Z
 LOCATION:Los Angeles\, Calif.
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #4\; USC #19 (AP Top
-  25)\nKickoff is not confirmed\; this all-day placeholder will become a ti
- med event when announced.\nSource: https://ohiostatebuckeyes.com/sports/fo
- otball/schedule/text
+DESCRIPTION:Regular Season\nAway\nTV/stream: NBC\nRankings: Ohio State #3\;
+  USC #16 (AP Top 25)\nSource: https://ohiostatebuckeyes.com/sports/footbal
+ l/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873034@local
@@ -479,10 +478,10 @@ DESCRIPTION:Regular Season • Week 8\nAway\nVenue: Hard Rock Stadium\nTV/s
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-f1b30b5095bcff25@local
-DTSTAMP:20261014T204650Z
-LAST-MODIFIED:20261014T204650Z
-SEQUENCE:9
-SUMMARY:Oregon at #4 Ohio State Buckeyes — Kickoff TBD
+DTSTAMP:20261021T204241Z
+LAST-MODIFIED:20261021T204241Z
+SEQUENCE:10
+SUMMARY:Oregon at #3 Ohio State Buckeyes — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261107
@@ -490,7 +489,7 @@ DTEND;VALUE=DATE:20261108
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
 DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
-  #4\; Oregon Unranked (AP Top 25)\nKickoff is not confirmed\; this all-day
+  #3\; Oregon Unranked (AP Top 25)\nKickoff is not confirmed\; this all-day
   placeholder will become a timed event when announced.\nSource: https://oh
  iostatebuckeyes.com/sports/football/schedule/text
 END:VEVENT
@@ -528,10 +527,10 @@ DESCRIPTION:Regular Season • Week 9\nHome\nVenue: Gillette Stadium\nTV/st
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-bf880981161a7fb0@local
-DTSTAMP:20261014T204650Z
-LAST-MODIFIED:20261014T204650Z
-SEQUENCE:7
-SUMMARY:#25 Northwestern at #4 Ohio State Buckeyes — Kickoff TBD
+DTSTAMP:20261021T204241Z
+LAST-MODIFIED:20261021T204241Z
+SEQUENCE:8
+SUMMARY:#24 Northwestern at #3 Ohio State Buckeyes — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261114
@@ -539,7 +538,7 @@ DTEND;VALUE=DATE:20261115
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
 DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nRankings: Ohio State
-  #4\; Northwestern #25 (AP Top 25)\nKickoff is not confirmed\; this all-da
+  #3\; Northwestern #24 (AP Top 25)\nKickoff is not confirmed\; this all-da
  y placeholder will become a timed event when announced.\nSource: https://o
  hiostatebuckeyes.com/sports/football/schedule/text
 END:VEVENT
@@ -577,17 +576,17 @@ DESCRIPTION:Regular Season • Week 10\nAway\nVenue: AT&T Stadium\nTV/strea
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-b255b9b28bfe855f@local
-DTSTAMP:20261014T204650Z
-LAST-MODIFIED:20261014T204650Z
-SEQUENCE:7
-SUMMARY:#4 Ohio State Buckeyes at Nebraska — Kickoff TBD
+DTSTAMP:20261021T204241Z
+LAST-MODIFIED:20261021T204241Z
+SEQUENCE:8
+SUMMARY:#3 Ohio State Buckeyes at Nebraska — Kickoff TBD
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART;VALUE=DATE:20261121
 DTEND;VALUE=DATE:20261122
 LOCATION:Lincoln\, Neb.
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #4\; Nebraska Unrank
+DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #3\; Nebraska Unrank
  ed (AP Top 25)\nKickoff is not confirmed\; this all-day placeholder will b
  ecome a timed event when announced.\nSource: https://ohiostatebuckeyes.com
  /sports/football/schedule/text
@@ -610,10 +609,10 @@ DESCRIPTION:Regular Season • Week 11\nHome • Neutral site\nVenue: Estad
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-7758fb4b98f39a2a@local
-DTSTAMP:20261014T204650Z
-LAST-MODIFIED:20261014T204650Z
-SEQUENCE:9
-SUMMARY:Michigan at #4 Ohio State Buckeyes
+DTSTAMP:20261021T204241Z
+LAST-MODIFIED:20261021T204241Z
+SEQUENCE:10
+SUMMARY:Michigan at #3 Ohio State Buckeyes
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
 DTSTART:20261128T170000Z
@@ -621,7 +620,7 @@ DTEND:20261128T203000Z
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
 DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nTV/stream: FOX\, Fox
-  One\nRankings: Ohio State #4\; Michigan Unranked (AP Top 25)\nSource: htt
+  One\nRankings: Ohio State #3\; Michigan Unranked (AP Top 25)\nSource: htt
  ps://ohiostatebuckeyes.com/sports/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
