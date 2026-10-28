@@ -169,18 +169,18 @@ DESCRIPTION:Regular Season • Week 7\nAway\nVenue: Mercedes-Benz Stadium\n
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873047@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261028T214444Z
+LAST-MODIFIED:20261028T214444Z
+SEQUENCE:4
 SUMMARY:Las Vegas Raiders at San Francisco 49ers
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
-DTSTART:20261108T210500Z
-DTEND:20261109T002000Z
+DTSTART:20261108T212500Z
+DTEND:20261109T004000Z
 LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873047/raiders-49ers
 DESCRIPTION:Regular Season • Week 9\nHome\nVenue: Levi's Stadium\nTV/stre
- am: CBS\nSource: https://www.espn.com/nfl/game/_/gameId/401873047/raiders-
+ am: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401873047/raiders-
  49ers
 END:VEVENT
 BEGIN:VEVENT
