@@ -1,0 +1,32 @@
+name: Check published calendars
+
+on:
+  schedule:
+    - cron: '41 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-published-calendars
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check public Pages publication
+        env:
+          FEED_BASE_URL: https://derektraini.github.io/football-calendars
+        shell: bash
+        run: |
+          set -o pipefail
+          python scripts/check_published.py --base-url "$FEED_BASE_URL" --max-age-hours 192 2>&1 | tee "$GITHUB_STEP_SUMMARY"

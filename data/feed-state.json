@@ -1,6 +1,10 @@
 {
   "football-calendar-college-football-osu-3061aedc40c74935@local": {
     "fingerprint": "2f3627a235d6a098bbd9fe8094c9b953508890194484b7e2def160fc60c109a1",
+    "identity": {
+      "opponent": "indiana",
+      "season": 2026
+    },
     "modified": "20261021T204241Z",
     "ranking_snapshot": {
       "opponent_rank": "#5",
@@ -11,6 +15,10 @@
   },
   "football-calendar-college-football-osu-34c055f97199cd67@local": {
     "fingerprint": "eb70069a2803f06f4d7872704342cf958c4c60532b273bc46729bfd6fcddcde9",
+    "identity": {
+      "opponent": "texas",
+      "season": 2026
+    },
     "modified": "20260930T212728Z",
     "ranking_snapshot": null,
     "sequence": 5
@@ -22,12 +30,20 @@
   },
   "football-calendar-college-football-osu-68dc9697a20f382a@local": {
     "fingerprint": "301a6f192d880147c70a76674c1be1461507fcfcb57bb6a2a069922bd40febbc",
+    "identity": {
+      "opponent": "ballstate",
+      "season": 2026
+    },
     "modified": "20260930T212728Z",
     "ranking_snapshot": null,
     "sequence": 6
   },
   "football-calendar-college-football-osu-7758fb4b98f39a2a@local": {
     "fingerprint": "46a55fbd658d82899366a3088084eb38261fb3bc6ca8c16344eb60c51c3aa214",
+    "identity": {
+      "opponent": "michigan",
+      "season": 2026
+    },
     "modified": "20261028T214444Z",
     "ranking_snapshot": {
       "opponent_rank": null,
@@ -38,6 +54,10 @@
   },
   "football-calendar-college-football-osu-9454bba023f86e90@local": {
     "fingerprint": "f82f2f82999cbdaccada102d4a9ebc15490f664a25bc93560c053431d9832274",
+    "identity": {
+      "opponent": "maryland",
+      "season": 2026
+    },
     "modified": "20261014T204650Z",
     "ranking_snapshot": {
       "opponent_rank": null,
@@ -48,6 +68,10 @@
   },
   "football-calendar-college-football-osu-aa16bcedfdf4e52f@local": {
     "fingerprint": "98977bf919b70c63c0b999eb046ab972a75795bd73e769541b952eacb5ce3e9f",
+    "identity": {
+      "opponent": "iowa",
+      "season": 2026
+    },
     "modified": "20260930T212728Z",
     "ranking_snapshot": {
       "opponent_rank": "#14",
@@ -58,6 +82,10 @@
   },
   "football-calendar-college-football-osu-b255b9b28bfe855f@local": {
     "fingerprint": "268e322837f468550724555a60edc31dd1a810c8a83885a9ad78695949123634",
+    "identity": {
+      "opponent": "nebraska",
+      "season": 2026
+    },
     "modified": "20261028T214444Z",
     "ranking_snapshot": {
       "opponent_rank": null,
@@ -68,6 +96,10 @@
   },
   "football-calendar-college-football-osu-bf880981161a7fb0@local": {
     "fingerprint": "3e3a87019c945bc0c1cc3bfdfba400aca0f02db21e6313f2b111e0674a28647d",
+    "identity": {
+      "opponent": "northwestern",
+      "season": 2026
+    },
     "modified": "20261028T214444Z",
     "ranking_snapshot": {
       "opponent_rank": "#20",
@@ -78,12 +110,20 @@
   },
   "football-calendar-college-football-osu-c0476526b70fb978@local": {
     "fingerprint": "1b742026ada3905a94c328ade6e4520f7f5c8c0eaf21ba561580139a29d56d24",
+    "identity": {
+      "opponent": "illinois",
+      "season": 2026
+    },
     "modified": "20260930T212728Z",
     "ranking_snapshot": null,
     "sequence": 6
   },
   "football-calendar-college-football-osu-c7422a697cc32118@local": {
     "fingerprint": "a66c320badb800b355fcf15356dc6837b5cc828eeac73de3aecdef53131eaa17",
+    "identity": {
+      "opponent": "usc",
+      "season": 2026
+    },
     "modified": "20261028T214444Z",
     "ranking_snapshot": {
       "opponent_rank": null,
@@ -94,12 +134,20 @@
   },
   "football-calendar-college-football-osu-dfb5c0cd9e06375d@local": {
     "fingerprint": "d5488063238d4731be85fff07af83fde2703866b105f1ca1a73207eb2558c7f6",
+    "identity": {
+      "opponent": "kentstate",
+      "season": 2026
+    },
     "modified": "20260930T212728Z",
     "ranking_snapshot": null,
     "sequence": 6
   },
   "football-calendar-college-football-osu-f1b30b5095bcff25@local": {
     "fingerprint": "0164ecd08dcadb9b96956781f37b871c773ac39c9f3e077f41b7261110560a2c",
+    "identity": {
+      "opponent": "oregon",
+      "season": 2026
+    },
     "modified": "20261028T214444Z",
     "ranking_snapshot": {
       "opponent_rank": null,

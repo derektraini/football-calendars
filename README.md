@@ -48,6 +48,25 @@ The refresh job refuses to replace a previously generated feed with an empty
 schedule. It stores event fingerprints in `data/feed-state.json`, keeping UIDs
 stable and incrementing `SEQUENCE` only after a material event change.
 
+Ohio State dates use the season in the official schedule heading, with January
+and February games falling in the following calendar year. Missing or conflicting
+season headings stop the refresh. Published Ohio State state also records season
+and normalized opponent so a date or venue change can retain its UID. Each
+refresh also remembers the latest schedule row identifier, allowing a new
+postseason rematch when the earlier meeting is still present, even after that
+meeting was rescheduled.
+The existing 2026 events have this metadata seeded without resetting revisions
+or ranking snapshots. Keep the state file when moving or restoring the generator.
+An ambiguous rematch or an unrecognized opponent rename stops generation for
+explicit identity reconciliation instead of replacing a subscriber's event.
+
+When both followed NFL teams play each other, each team feed and the combined
+feed use the same event and revision. The home team's perspective is used, and
+available playoff information is labeled for both teams. The combined feed
+contains the match only once; conflicting provider records stop the refresh.
+The NFL completeness check requires 17 distinct regular-season games per team;
+duplicate provider rows do not count toward that minimum.
+
 Schedule-provided rank prefixes (such as `#4 Texas`) are stripped before
 opponent identity, UID hashing, and poll lookup. Displayed ranks come only from
 the selected AP/CFP enrichment, so changing a schedule prefix cannot create a
@@ -98,17 +117,63 @@ and also offers a manual run. That is 10:23 AM PDT / 9:23 AM PST. GitHub cron is
 UTC, so one fixed weekly time cannot remain the same Pacific wall-clock time
 through daylight-saving changes.
 
+## Published-feed monitoring
+
+`Check published calendars` checks the public Pages URL daily at 08:41 UTC and
+also supports a manual run. It is read-only and separate from feed generation.
+The schedule becomes active when the workflow is on the default branch.
+
+The check fails if the publication is more than eight days old (the weekly
+refresh interval plus one day's grace), more than five minutes in the future,
+or labeled as fixture data. It also checks that all four calendars are readable,
+contain active events, have unique UIDs within each feed, and agree on the
+combined UID set and cancellations. Health counts exclude retained cancellations;
+unchanged events can legitimately have old `DTSTAMP` values.
+
+New health output includes SHA256 hashes of the exact calendar bytes. The monitor
+verifies all four hashes and retries the full download once if it encounters an
+error, including mismatched versions during deployment. Existing health output
+without hashes still receives freshness and structural checks, with an explicit
+message that checksum verification is unavailable until the next refresh.
+
+Failures appear in the Actions run and job summary. Delivery of notifications
+depends on your [GitHub Actions notification settings](https://docs.github.com/en/actions/concepts/workflows-and-actions/notifications-for-workflow-runs).
+Inspect the refresh and deployment logs, then rerun the check after resolving the
+cause. With daily checks, an overdue publication is normally detected between
+eight and nine days after generation; GitHub can delay scheduled runs.
+Because this monitor also runs in GitHub Actions, it cannot detect its own
+disabled schedule or an Actions outage. An external checker can use the same
+command if independent monitoring is needed.
+
+```sh
+python3 scripts/check_published.py \
+  --base-url https://derektraini.github.io/football-calendars --max-age-hours 192
+```
+
+Change the age limit when changing the generation cadence. The checker does not
+read the local `site/health.json`, so an old checkout cannot trigger a stale-feed
+alert.
+
 ## Local verification
 
 No runtime dependencies are needed beyond Python 3.11+.
 
 ```sh
 python3 -m unittest discover -s tests -v
-python3 scripts/calendar_feed.py --fixture tests/fixtures/sample.json --output /tmp/football-calendars
+fixture_dir=$(mktemp -d)
+python3 scripts/calendar_feed.py --fixture tests/fixtures/sample.json \
+  --output "$fixture_dir" --state "$fixture_dir/feed-state.json"
 ```
 
-The checked-in fixture is only for tests; it is never published. A normal refresh
-uses live sources:
+Fixture health output is labeled `fixture`. Without `--state`, fixture runs store
+state inside the output directory; explicit paths to the live state are rejected.
+The checked-in fixtures are only for tests and are never published.
+`osu-2026.html` contains simplified official schedule rows captured November 3,
+2026; `osu-published-state.json` preserves the October 28 Ohio State revisions
+with the migration metadata. Tests use these frozen snapshots so scheduled feed
+updates do not change the regression baseline.
+
+A normal refresh uses live sources:
 
 ```sh
 python3 scripts/calendar_feed.py --output site

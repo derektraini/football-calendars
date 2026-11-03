@@ -18,7 +18,7 @@ ROOT = Path(__file__).parent
 
 
 def texas_schedule(opponent: str, kickoff: str = "7:30 PM") -> str:
-    return (f"<table><tr><td>Sep 12 (Sat)</td><td>{kickoff}</td><td>Away</td>"
+    return (f"<h1>2026 Football Schedule</h1><table><tr><td>Sep 12 (Sat)</td><td>{kickoff}</td><td>Away</td>"
             f"<td>{opponent}</td><td>Austin, Texas</td></tr></table>")
 
 
@@ -30,7 +30,7 @@ class OpponentIdentityTests(unittest.TestCase):
         for opponent in ("Texas", "#4 Texas", "#7 Texas", " # 12 Texas ",
                          "No. 4 Texas", "No.4 Texas", "no 7 Texas", "(4) Texas"):
             with self.subTest(opponent=opponent):
-                game = parse_osu_schedule(texas_schedule(opponent), 2026)[0]
+                game = parse_osu_schedule(texas_schedule(opponent))[0]
                 self.assertEqual(game.opponent, "Texas")
                 self.assertEqual(game.uid, self.canonical_uid)
                 self.assertIsNone(game.opponent_rank)
@@ -49,7 +49,7 @@ class OpponentIdentityTests(unittest.TestCase):
                 {"current": 9, "team": {"id": "251", "location": "Texas"}},
             ],
         }]}, date(2026, 9, 9))
-        game = parse_osu_schedule(texas_schedule("#4 Texas"), 2026)[0]
+        game = parse_osu_schedule(texas_schedule("#4 Texas"))[0]
         enrich([game], ranks, by_name, source, {}, date(2026, 9, 9))
         lines = event_lines(game, {}, datetime(2026, 9, 9, tzinfo=UTC))
         self.assertIn("SUMMARY:#6 Ohio State Buckeyes at #9 Texas", lines)
@@ -57,7 +57,7 @@ class OpponentIdentityTests(unittest.TestCase):
         self.assertFalse(any("#4" in line or "Unranked" in line for line in lines))
 
     def test_schedule_rank_without_selected_poll_is_not_rendered(self) -> None:
-        game = parse_osu_schedule(texas_schedule("#4 Texas"), 2026)[0]
+        game = parse_osu_schedule(texas_schedule("#4 Texas"))[0]
         enrich([game], {}, {}, None, {}, date(2026, 9, 9))
         lines = event_lines(game, {}, datetime(2026, 9, 9, tzinfo=UTC))
         self.assertIn("SUMMARY:Ohio State Buckeyes at Texas", lines)
@@ -67,7 +67,7 @@ class OpponentIdentityTests(unittest.TestCase):
         state = {}
         now = datetime(2026, 9, 9, tzinfo=UTC)
         for label in ("Texas", "#4 Texas", "#7 Texas", "Texas"):
-            game = parse_osu_schedule(texas_schedule(label), 2026)[0]
+            game = parse_osu_schedule(texas_schedule(label))[0]
             enrich([game], {"194": 6}, {"texas": 9}, "AP Top 25", {}, now.date())
             lines = event_lines(game, state, now)
             self.assertIn("SEQUENCE:0", lines)
@@ -76,15 +76,15 @@ class OpponentIdentityTests(unittest.TestCase):
         self.assertEqual(list(state), [self.canonical_uid])
 
     def test_kickoff_confirmation_does_not_change_uid(self) -> None:
-        pending = parse_osu_schedule(texas_schedule("#4 Texas", "TBA"), 2026)[0]
-        confirmed = parse_osu_schedule(texas_schedule("Texas"), 2026)[0]
+        pending = parse_osu_schedule(texas_schedule("#4 Texas", "TBA"))[0]
+        confirmed = parse_osu_schedule(texas_schedule("Texas"))[0]
         self.assertEqual(pending.uid, confirmed.uid)
         self.assertFalse(pending.time_confirmed)
         self.assertTrue(confirmed.time_confirmed)
 
     def test_published_duplicate_is_cancelled_in_both_feeds_idempotently(self) -> None:
         now = datetime(2026, 9, 29, tzinfo=UTC)
-        game = parse_osu_schedule(texas_schedule("#4 Texas"), 2026)[0]
+        game = parse_osu_schedule(texas_schedule("#4 Texas"))[0]
         # September 23 state: original sequence 4 and duplicate sequence 1.
         state = {
             self.canonical_uid: {"fingerprint": "original", "sequence": 4, "modified": "20260909T195207Z"},
@@ -118,7 +118,7 @@ class OpponentIdentityTests(unittest.TestCase):
                 self.assertEqual((output / f"{name}.ics").read_text(), feed)
 
     def test_fresh_state_does_not_create_duplicate_cancellation(self) -> None:
-        game = parse_osu_schedule(texas_schedule("#4 Texas"), 2026)[0]
+        game = parse_osu_schedule(texas_schedule("#4 Texas"))[0]
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / "site"
             write_feeds([game], output, Path(directory) / "state.json", datetime(2026, 9, 29, tzinfo=UTC))
@@ -198,7 +198,7 @@ class EspnTbdDateTests(unittest.TestCase):
 
 class OfficialKickoffTests(unittest.TestCase):
     def game(self, kickoff="TBA"):
-        return parse_osu_schedule(texas_schedule("Maryland", kickoff).replace("Sep 12", "Oct 10").replace("Away", "Home"), 2026)[0]
+        return parse_osu_schedule(texas_schedule("Maryland", kickoff).replace("Sep 12", "Oct 10").replace("Away", "Home"))[0]
 
     def printable(self, kickoff="4:15 p.m.", opponent="#4 Maryland", day="October 10, 2026", side="Home"):
         return (f"<table><tr><td>{day}</td><td>{kickoff}</td><td>{side}</td>"
