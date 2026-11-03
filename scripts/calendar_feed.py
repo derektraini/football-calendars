@@ -9,7 +9,7 @@ import json
 import re
 import subprocess
 import sys
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from datetime import UTC, date, datetime, time, timedelta
 from html.parser import HTMLParser
 from pathlib import Path
@@ -85,8 +85,12 @@ class ScheduleTable(HTMLParser):
         self._cells: list[str] = []
         self._cell: list[str] | None = None
         self._in_row = False
+        self.headings: list[str] = []
+        self._heading: list[str] | None = None
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag in {"h1", "h2", "h3"}:
+            self._heading = []
         if tag == "tr":
             self._in_row = True
             self._cells = []
@@ -94,10 +98,15 @@ class ScheduleTable(HTMLParser):
             self._cell = []
 
     def handle_data(self, data: str) -> None:
+        if self._heading is not None:
+            self._heading.append(data)
         if self._cell is not None:
             self._cell.append(data)
 
     def handle_endtag(self, tag: str) -> None:
+        if tag in {"h1", "h2", "h3"} and self._heading is not None:
+            self.headings.append(" ".join("".join(self._heading).split()))
+            self._heading = None
         if tag in {"td", "th"} and self._cell is not None:
             self._cells.append(" ".join("".join(self._cell).split()))
             self._cell = None
@@ -185,15 +194,22 @@ def parse_espn_schedule(team: Team, payload: dict[str, Any]) -> list[Game]:
     return games
 
 
-def parse_osu_schedule(html: str, year: int) -> list[Game]:
+def parse_osu_schedule(html: str) -> list[Game]:
     table = ScheduleTable()
     table.feed(html)
+    seasons = {int(match[1]) for heading in table.headings
+               if (match := re.fullmatch(r"(20\d{2}) Football Schedule", heading, re.IGNORECASE))}
+    if len(seasons) != 1:
+        raise ValueError("Ohio State schedule must identify one source season")
+    year = seasons.pop()
     games: list[Game] = []
     for cells in table.rows:
         if len(cells) < 5 or not re.fullmatch(r"[A-Z][a-z]{2} \d{1,2} \([A-Za-z]{3}\)", cells[0]):
             continue
         month_day = re.sub(r" \([A-Za-z]{3}\)", "", cells[0])
-        game_day = datetime.strptime(f"{year} {month_day}", "%Y %b %d").date()
+        postseason = datetime.strptime(month_day.split()[0], "%b").month <= 2
+        calendar_year = year + 1 if postseason else year
+        game_day = datetime.strptime(f"{calendar_year} {month_day}", "%Y %b %d").date()
         kickoff = cells[1].upper()
         start: datetime | None = None
         confirmed = kickoff not in {"TBA", "", "-"}
@@ -211,11 +227,13 @@ def parse_osu_schedule(html: str, year: int) -> list[Game]:
         venue_match = re.search(r"\(([^)]+)\)", raw_location)
         venue = venue_match.group(1) if venue_match else ""
         location = re.sub(r"\s*\([^)]+\)", "", raw_location)
-        stable_key = f"{year}|{game_day.isoformat()}|{opponent.lower()}|{home_away}"
-        provider_id = "osu-" + hashlib.sha256(stable_key.encode()).hexdigest()[:16]
+        # Keep the legacy initial UID; persisted identity resolves later changes.
+        initial_key = f"{year}|{game_day.isoformat()}|{opponent.lower()}|{home_away}"
+        provider_id = "osu-" + hashlib.sha256(initial_key.encode()).hexdigest()[:16]
         games.append(Game(
             provider_id=provider_id, team="Ohio State Buckeyes", league="college-football",
-            opponent=opponent, home_away=home_away, season=year, season_type="Regular Season",
+            opponent=opponent, home_away=home_away, season=year,
+            season_type="Postseason" if postseason else "Regular Season",
             week="", start=start, game_date=game_day, time_confirmed=confirmed,
             venue=venue, location=location, url=OHIO_STATE_SCHEDULE,
         ))
@@ -231,6 +249,64 @@ def unranked_team_name(name: str) -> str:
 
 def normalized_team_name(name: str) -> str:
     return re.sub(r"[^a-z0-9]", "", unranked_team_name(name).casefold())
+
+
+def osu_identity(game: Game) -> dict[str, Any]:
+    return {"season": game.season, "opponent": normalized_team_name(game.opponent)}
+
+
+def reconcile_osu_games(games: list[Game], state: dict[str, Any]) -> list[Game]:
+    """Reuse published UIDs; dates and display names are mutable event details."""
+    osu = [game for game in games if game.team == TEAMS[0].name]
+    assigned: dict[str, str] = {}
+    seen: set[str] = set()
+    for game in osu:
+        if game.uid in seen:
+            raise ValueError(f"Duplicate Ohio State schedule row: {game.opponent}")
+        seen.add(game.uid)
+        exact = [uid for uid, entry in state.items() if uid not in SUPERSEDED_UIDS and (
+            entry.get("schedule_id") == game.provider_id
+            or ("schedule_id" not in entry and uid == game.uid)
+        )]
+        if len(exact) > 1 or any(uid in assigned.values() for uid in exact):
+            raise ValueError(f"Ambiguous Ohio State identity: {game.opponent} ({game.season})")
+        if exact:
+            assigned[game.uid] = exact[0]
+    for game in osu:
+        if game.uid in assigned:
+            continue
+        candidates = [uid for uid, entry in state.items()
+                      if uid not in SUPERSEDED_UIDS and entry.get("identity") == osu_identity(game)]
+        unmatched = [other for other in osu
+                     if other.uid not in assigned and osu_identity(other) == osu_identity(game)]
+        available = [uid for uid in candidates if uid not in assigned.values()]
+        if available:
+            if len(available) != 1 or len(unmatched) != 1:
+                raise ValueError(f"Ambiguous Ohio State identity: {game.opponent} ({game.season})")
+            assigned[game.uid] = available[0]
+    for game in osu:
+        if game.uid in assigned:
+            continue
+        if any(uid not in assigned.values() and entry.get("identity", {}).get("season") == game.season
+               for uid, entry in state.items()):
+            raise ValueError(f"Unresolved Ohio State identity: {game.opponent} ({game.season})")
+        uid = game.uid
+        suffix = 2
+        while uid in state or uid in assigned.values():
+            uid = replace(game, provider_id=f"{game.provider_id}-{suffix}").uid
+            suffix += 1
+        assigned[game.uid] = uid
+    reconciled = []
+    for game in games:
+        if game.team == TEAMS[0].name:
+            uid = assigned[game.uid]
+            schedule_id = game.provider_id
+            provider_id = uid.removeprefix("football-calendar-college-football-").removesuffix("@local")
+            game = replace(game, provider_id=provider_id)
+            state.setdefault(uid, {})["identity"] = osu_identity(game)
+            state[uid]["schedule_id"] = schedule_id
+        reconciled.append(game)
+    return reconciled
 
 
 def recover_osu_details(games: list[Game], html: str, today: date) -> None:
@@ -386,7 +462,7 @@ def event_lines(game: Game, state: dict[str, Any], now: datetime) -> list[str]:
         sequence, modified = old["sequence"], old["modified"]
     else:
         sequence, modified = int(old.get("sequence", -1)) + 1, now.strftime("%Y%m%dT%H%M%SZ")
-    entry = {"fingerprint": fingerprint, "sequence": sequence, "modified": modified}
+    entry = {**old, "fingerprint": fingerprint, "sequence": sequence, "modified": modified}
     if game.league == "college-football":
         entry["ranking_snapshot"] = old.get("ranking_snapshot") if completed else ranking_snapshot(game)
     state[game.uid] = entry
@@ -443,13 +519,43 @@ def superseded_event_lines(game: Game, uid: str, state: dict[str, Any], now: dat
             "SUMMARY:Superseded duplicate of Ohio State at Texas", "END:VEVENT"]
 
 
+def canonical_games(games: list[Game]) -> list[Game]:
+    grouped: dict[str, list[Game]] = {}
+    for game in games:
+        grouped.setdefault(game.uid, []).append(game)
+    canonical = []
+    for uid, perspectives in grouped.items():
+        # Prefer the home perspective whenever both followed NFL teams play.
+        ordered = sorted(perspectives, key=lambda game: (game.home_away != "home", game.team))
+        game = ordered[0]
+        for other in ordered[1:]:
+            if other == game:
+                continue
+            shared = state_for(game)
+            alternative = state_for(other)
+            for field in ("team", "opponent", "home_away", "playoff"):
+                shared.pop(field)
+                alternative.pop(field)
+            opposing = (game.league == "nfl" and game.team == other.opponent
+                        and game.opponent == other.team
+                        and {game.home_away, other.home_away} == {"home", "away"})
+            if not opposing or shared != alternative:
+                raise ValueError(f"Conflicting provider records for {uid}")
+        if len({other.team for other in ordered}) > 1:
+            playoff = "\n\n".join(f"{team}:\n{status}" for team, status in
+                                    sorted({(other.team, other.playoff) for other in ordered if other.playoff}))
+            game = replace(game, playoff=playoff or None)
+        canonical.append(game)
+    return canonical
+
+
 def render_calendar(name: str, games: list[Game], state: dict[str, Any], now: datetime, color: str | None = None) -> str:
     lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Football Calendars//EN", "CALSCALE:GREGORIAN",
              "METHOD:PUBLISH", f"X-WR-CALNAME:{text_value(name)}", "X-WR-TIMEZONE:America/Los_Angeles",
              "X-PUBLISHED-TTL:PT1H"]
     if color:
         lines.append(f"COLOR:{color}")
-    for game in sorted(games, key=lambda game: (game.game_date, game.provider_id)):
+    for game in sorted(canonical_games(games), key=lambda game: (game.game_date, game.provider_id)):
         lines.extend(event_lines(game, state, now))
         for obsolete_uid, canonical_uid in SUPERSEDED_UIDS.items():
             if game.uid == canonical_uid and obsolete_uid in state:
@@ -462,16 +568,22 @@ def load_state(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text()) if path.exists() else {}
 
 
-def write_feeds(games: list[Game], output: Path, state_path: Path, now: datetime) -> None:
-    output.mkdir(parents=True, exist_ok=True)
+def write_feeds(games: list[Game], output: Path, state_path: Path, now: datetime, *, source: str = "live") -> None:
     state = load_state(state_path)
-    grouped = {team.slug: [game for game in games if game.team == team.name] for team in TEAMS}
+    games = reconcile_osu_games(games, state)
+    memberships = {team.slug: {game.uid for game in games if game.team == team.name} for team in TEAMS}
+    games = canonical_games(games)
+    feeds = {}
     for team in TEAMS:
-        (output / f"{team.slug}.ics").write_text(render_calendar(team.name, grouped[team.slug], state, now, team.color), newline="")
-    (output / "football.ics").write_text(render_calendar("Football", games, state, now), newline="")
+        grouped = [game for game in games if game.uid in memberships[team.slug]]
+        feeds[team.slug] = render_calendar(team.name, grouped, state, now, team.color)
+    feeds["football"] = render_calendar("Football", games, state, now)
+    output.mkdir(parents=True, exist_ok=True)
+    for slug, content in feeds.items():
+        (output / f"{slug}.ics").write_text(content, newline="")
     state_path.parent.mkdir(parents=True, exist_ok=True)
     state_path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")
-    (output / "health.json").write_text(json.dumps({"generatedAt": now.isoformat(), "events": len(games), "source": "live"}, indent=2) + "\n")
+    (output / "health.json").write_text(json.dumps({"generatedAt": now.isoformat(), "events": len(games), "source": source}, indent=2) + "\n")
 
 
 def require_complete_schedule(label: str, games: list[Game], minimum: int) -> None:
@@ -480,7 +592,7 @@ def require_complete_schedule(label: str, games: list[Game], minimum: int) -> No
 
 
 def get_live_games(today: date) -> list[Game]:
-    osu = parse_osu_schedule(fetch_text(OHIO_STATE_SCHEDULE), today.year)
+    osu = parse_osu_schedule(fetch_text(OHIO_STATE_SCHEDULE))
     require_complete_schedule("Ohio State", osu, 10)
     recover_osu_details(osu, fetch_text(OHIO_STATE_PRINT_SCHEDULE), today)
     nfl_games: list[Game] = []
@@ -494,7 +606,7 @@ def get_live_games(today: date) -> list[Game]:
                 f"{ESPN}/nfl/teams/{team.espn_id}/schedule?season={nfl_season}&seasontype={season_type_id}"
             )
             events.extend(schedule.get("events", []))
-        parsed = parse_espn_schedule(team, {"events": events})
+        parsed = canonical_games(parse_espn_schedule(team, {"events": events}))
         regular_season_games = [game for game in parsed if game.season_type == "Regular Season"]
         require_complete_schedule(f"NFL provider ({team.name} regular season)", regular_season_games, 17)
         nfl_games.extend(parsed)
@@ -520,15 +632,21 @@ def load_fixture(path: Path) -> list[Game]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--state", type=Path, default=Path("data/feed-state.json"))
+    parser.add_argument("--state", type=Path, help="Live state defaults to data/feed-state.json; fixtures use OUTPUT/feed-state.json")
     parser.add_argument("--fixture", type=Path)
     args = parser.parse_args()
     now = datetime.now(UTC).replace(microsecond=0)
     try:
+        state_path = args.state or (args.output / "feed-state.json" if args.fixture else Path("data/feed-state.json"))
+        if args.fixture and state_path.resolve() in {
+            Path("data/feed-state.json").resolve(),
+            Path(__file__).resolve().parents[1] / "data/feed-state.json",
+        }:
+            raise ValueError("fixture state must be separate from live data/feed-state.json")
         games = load_fixture(args.fixture) if args.fixture else get_live_games(now.astimezone(PACIFIC).date())
         if not games:
             raise ValueError("no games were produced")
-        write_feeds(games, args.output, args.state, now)
+        write_feeds(games, args.output, state_path, now, source="fixture" if args.fixture else "live")
     except Exception as error:
         print(f"calendar refresh failed: {error}", file=sys.stderr)
         return 1

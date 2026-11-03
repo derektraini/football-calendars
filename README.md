@@ -48,6 +48,25 @@ The refresh job refuses to replace a previously generated feed with an empty
 schedule. It stores event fingerprints in `data/feed-state.json`, keeping UIDs
 stable and incrementing `SEQUENCE` only after a material event change.
 
+Ohio State dates use the season in the official schedule heading, with January
+and February games falling in the following calendar year. Missing or conflicting
+season headings stop the refresh. Published Ohio State state also records season
+and normalized opponent so a date or venue change can retain its UID. Each
+refresh also remembers the latest schedule row identifier, allowing a new
+postseason rematch when the earlier meeting is still present, even after that
+meeting was rescheduled.
+The existing 2026 events have this metadata seeded without resetting revisions
+or ranking snapshots. Keep the state file when moving or restoring the generator.
+An ambiguous rematch or an unrecognized opponent rename stops generation for
+explicit identity reconciliation instead of replacing a subscriber's event.
+
+When both followed NFL teams play each other, each team feed and the combined
+feed use the same event and revision. The home team's perspective is used, and
+available playoff information is labeled for both teams. The combined feed
+contains the match only once; conflicting provider records stop the refresh.
+The NFL completeness check requires 17 distinct regular-season games per team;
+duplicate provider rows do not count toward that minimum.
+
 Schedule-provided rank prefixes (such as `#4 Texas`) are stripped before
 opponent identity, UID hashing, and poll lookup. Displayed ranks come only from
 the selected AP/CFP enrichment, so changing a schedule prefix cannot create a
@@ -104,11 +123,20 @@ No runtime dependencies are needed beyond Python 3.11+.
 
 ```sh
 python3 -m unittest discover -s tests -v
-python3 scripts/calendar_feed.py --fixture tests/fixtures/sample.json --output /tmp/football-calendars
+fixture_dir=$(mktemp -d)
+python3 scripts/calendar_feed.py --fixture tests/fixtures/sample.json \
+  --output "$fixture_dir" --state "$fixture_dir/feed-state.json"
 ```
 
-The checked-in fixture is only for tests; it is never published. A normal refresh
-uses live sources:
+Fixture health output is labeled `fixture`. Without `--state`, fixture runs store
+state inside the output directory; explicit paths to the live state are rejected.
+The checked-in fixtures are only for tests and are never published.
+`osu-2026.html` contains simplified official schedule rows captured November 3,
+2026; `osu-published-state.json` preserves the October 28 Ohio State revisions
+with the migration metadata. Tests use these frozen snapshots so scheduled feed
+updates do not change the regression baseline.
+
+A normal refresh uses live sources:
 
 ```sh
 python3 scripts/calendar_feed.py --output site
