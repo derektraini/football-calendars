@@ -117,6 +117,43 @@ and also offers a manual run. That is 10:23 AM PDT / 9:23 AM PST. GitHub cron is
 UTC, so one fixed weekly time cannot remain the same Pacific wall-clock time
 through daylight-saving changes.
 
+## Published-feed monitoring
+
+`Check published calendars` checks the public Pages URL daily at 08:41 UTC and
+also supports a manual run. It is read-only and separate from feed generation.
+The schedule becomes active when the workflow is on the default branch.
+
+The check fails if the publication is more than eight days old (the weekly
+refresh interval plus one day's grace), more than five minutes in the future,
+or labeled as fixture data. It also checks that all four calendars are readable,
+contain active events, have unique UIDs within each feed, and agree on the
+combined UID set and cancellations. Health counts exclude retained cancellations;
+unchanged events can legitimately have old `DTSTAMP` values.
+
+New health output includes SHA256 hashes of the exact calendar bytes. The monitor
+verifies all four hashes and retries the full download once if it encounters an
+error, including mismatched versions during deployment. Existing health output
+without hashes still receives freshness and structural checks, with an explicit
+message that checksum verification is unavailable until the next refresh.
+
+Failures appear in the Actions run and job summary. Delivery of notifications
+depends on your [GitHub Actions notification settings](https://docs.github.com/en/actions/concepts/workflows-and-actions/notifications-for-workflow-runs).
+Inspect the refresh and deployment logs, then rerun the check after resolving the
+cause. With daily checks, an overdue publication is normally detected between
+eight and nine days after generation; GitHub can delay scheduled runs.
+Because this monitor also runs in GitHub Actions, it cannot detect its own
+disabled schedule or an Actions outage. An external checker can use the same
+command if independent monitoring is needed.
+
+```sh
+python3 scripts/check_published.py \
+  --base-url https://derektraini.github.io/football-calendars --max-age-hours 192
+```
+
+Change the age limit when changing the generation cadence. The checker does not
+read the local `site/health.json`, so an old checkout cannot trigger a stale-feed
+alert.
+
 ## Local verification
 
 No runtime dependencies are needed beyond Python 3.11+.

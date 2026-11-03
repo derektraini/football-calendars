@@ -580,10 +580,15 @@ def write_feeds(games: list[Game], output: Path, state_path: Path, now: datetime
     feeds["football"] = render_calendar("Football", games, state, now)
     output.mkdir(parents=True, exist_ok=True)
     for slug, content in feeds.items():
-        (output / f"{slug}.ics").write_text(content, newline="")
+        (output / f"{slug}.ics").write_bytes(content.encode("utf-8"))
     state_path.parent.mkdir(parents=True, exist_ok=True)
     state_path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")
-    (output / "health.json").write_text(json.dumps({"generatedAt": now.isoformat(), "events": len(games), "source": source}, indent=2) + "\n")
+    health = {
+        "generatedAt": now.isoformat(), "events": len(games), "source": source,
+        "files": {f"{slug}.ics": hashlib.sha256(content.encode("utf-8")).hexdigest()
+                  for slug, content in feeds.items()},
+    }
+    (output / "health.json").write_text(json.dumps(health, indent=2) + "\n")
 
 
 def require_complete_schedule(label: str, games: list[Game], minimum: int) -> None:
