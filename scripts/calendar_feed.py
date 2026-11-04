@@ -568,7 +568,8 @@ def load_state(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text()) if path.exists() else {}
 
 
-def write_feeds(games: list[Game], output: Path, state_path: Path, now: datetime, *, source: str = "live") -> None:
+def write_feeds(games: list[Game], output: Path, state_path: Path, now: datetime, *, source: str = "live",
+                dry_run: bool = False) -> dict[str, Any]:
     state = load_state(state_path)
     games = reconcile_osu_games(games, state)
     memberships = {team.slug: {game.uid for game in games if game.team == team.name} for team in TEAMS}
@@ -578,17 +579,20 @@ def write_feeds(games: list[Game], output: Path, state_path: Path, now: datetime
         grouped = [game for game in games if game.uid in memberships[team.slug]]
         feeds[team.slug] = render_calendar(team.name, grouped, state, now, team.color)
     feeds["football"] = render_calendar("Football", games, state, now)
-    output.mkdir(parents=True, exist_ok=True)
-    for slug, content in feeds.items():
-        (output / f"{slug}.ics").write_bytes(content.encode("utf-8"))
-    state_path.parent.mkdir(parents=True, exist_ok=True)
-    state_path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")
     health = {
         "generatedAt": now.isoformat(), "events": len(games), "source": source,
         "files": {f"{slug}.ics": hashlib.sha256(content.encode("utf-8")).hexdigest()
                   for slug, content in feeds.items()},
     }
+    if dry_run:
+        return health
+    output.mkdir(parents=True, exist_ok=True)
+    for slug, content in feeds.items():
+        (output / f"{slug}.ics").write_bytes(content.encode("utf-8"))
+    state_path.parent.mkdir(parents=True, exist_ok=True)
+    state_path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")
     (output / "health.json").write_text(json.dumps(health, indent=2) + "\n")
+    return health
 
 
 def require_complete_schedule(label: str, games: list[Game], minimum: int) -> None:
@@ -639,6 +643,8 @@ def main() -> int:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--state", type=Path, help="Live state defaults to data/feed-state.json; fixtures use OUTPUT/feed-state.json")
     parser.add_argument("--fixture", type=Path)
+    parser.add_argument("--dry-run", action="store_true",
+                        help="Render feeds and print a summary without writing files or state")
     args = parser.parse_args()
     now = datetime.now(UTC).replace(microsecond=0)
     try:
@@ -651,7 +657,12 @@ def main() -> int:
         games = load_fixture(args.fixture) if args.fixture else get_live_games(now.astimezone(PACIFIC).date())
         if not games:
             raise ValueError("no games were produced")
-        write_feeds(games, args.output, state_path, now, source="fixture" if args.fixture else "live")
+        health = write_feeds(games, args.output, state_path, now,
+                             source="fixture" if args.fixture else "live", dry_run=args.dry_run)
+        if args.dry_run:
+            print(f"dry run: {health['events']} events, {len(health['files'])} feeds (nothing written)")
+            for name in sorted(health["files"]):
+                print(f"  {name}: sha256 {health['files'][name][:12]}")
     except Exception as error:
         print(f"calendar refresh failed: {error}", file=sys.stderr)
         return 1
