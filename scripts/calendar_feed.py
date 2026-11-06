@@ -519,7 +519,7 @@ def superseded_event_lines(game: Game, uid: str, state: dict[str, Any], now: dat
             "SUMMARY:Superseded duplicate of Ohio State at Texas", "END:VEVENT"]
 
 
-def canonical_games(games: list[Game]) -> list[Game]:
+def deduplicate_games(games: list[Game]) -> list[Game]:
     grouped: dict[str, list[Game]] = {}
     for game in games:
         grouped.setdefault(game.uid, []).append(game)
@@ -555,7 +555,7 @@ def render_calendar(name: str, games: list[Game], state: dict[str, Any], now: da
              "X-PUBLISHED-TTL:PT1H"]
     if color:
         lines.append(f"COLOR:{color}")
-    for game in sorted(canonical_games(games), key=lambda game: (game.game_date, game.provider_id)):
+    for game in sorted(deduplicate_games(games), key=lambda game: (game.game_date, game.provider_id)):
         lines.extend(event_lines(game, state, now))
         for obsolete_uid, canonical_uid in SUPERSEDED_UIDS.items():
             if game.uid == canonical_uid and obsolete_uid in state:
@@ -572,7 +572,7 @@ def write_feeds(games: list[Game], output: Path, state_path: Path, now: datetime
     state = load_state(state_path)
     games = reconcile_osu_games(games, state)
     memberships = {team.slug: {game.uid for game in games if game.team == team.name} for team in TEAMS}
-    games = canonical_games(games)
+    games = deduplicate_games(games)
     feeds = {}
     for team in TEAMS:
         grouped = [game for game in games if game.uid in memberships[team.slug]]
@@ -611,7 +611,7 @@ def get_live_games(today: date) -> list[Game]:
                 f"{ESPN}/nfl/teams/{team.espn_id}/schedule?season={nfl_season}&seasontype={season_type_id}"
             )
             events.extend(schedule.get("events", []))
-        parsed = canonical_games(parse_espn_schedule(team, {"events": events}))
+        parsed = deduplicate_games(parse_espn_schedule(team, {"events": events}))
         regular_season_games = [game for game in parsed if game.season_type == "Regular Season"]
         require_complete_schedule(f"NFL provider ({team.name} regular season)", regular_season_games, 17)
         nfl_games.extend(parsed)

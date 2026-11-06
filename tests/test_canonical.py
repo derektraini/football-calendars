@@ -3,7 +3,7 @@ from __future__ import annotations
 import unittest
 from datetime import UTC, date, datetime
 
-from scripts.calendar_feed import Game, canonical_games, superseded_event_lines
+from scripts.calendar_feed import Game, deduplicate_games, superseded_event_lines
 
 NOW = datetime(2026, 11, 3, 18, tzinfo=UTC)
 
@@ -37,7 +37,7 @@ def perspectives(**overrides):
 class CanonicalGamesTests(unittest.TestCase):
     def test_shared_game_appears_once_and_prefers_home_perspective(self):
         home, away = perspectives()
-        result = canonical_games([away, home])
+        result = deduplicate_games([away, home])
         self.assertEqual(len(result), 1)
         self.assertEqual(result[0].team, "Buffalo Bills")
         self.assertEqual(result[0].home_away, "home")
@@ -47,20 +47,20 @@ class CanonicalGamesTests(unittest.TestCase):
         conflicting = nfl_game("San Francisco 49ers", "Buffalo Bills", "away",
                                venue="A Different Stadium")
         with self.assertRaises(ValueError):
-            canonical_games([home, conflicting])
+            deduplicate_games([home, conflicting])
 
     def test_non_opposing_duplicate_uid_raises(self):
         home, _ = perspectives()
         also_home = nfl_game("San Francisco 49ers", "Buffalo Bills", "home")
         with self.assertRaises(ValueError):
-            canonical_games([home, also_home])
+            deduplicate_games([home, also_home])
 
     def test_playoff_notes_from_both_perspectives_are_merged(self):
         home = nfl_game("Buffalo Bills", "San Francisco 49ers", "home",
                         playoff="Clinched the division")
         away = nfl_game("San Francisco 49ers", "Buffalo Bills", "away",
                         playoff="Eliminated from contention")
-        result = canonical_games([away, home])
+        result = deduplicate_games([away, home])
         self.assertEqual(len(result), 1)
         self.assertIn("Buffalo Bills:\nClinched the division", result[0].playoff)
         self.assertIn("San Francisco 49ers:\nEliminated from contention", result[0].playoff)
@@ -68,7 +68,7 @@ class CanonicalGamesTests(unittest.TestCase):
     def test_distinct_games_pass_through(self):
         home, _ = perspectives()
         other = nfl_game("Buffalo Bills", "Miami Dolphins", "home", provider_id="402")
-        self.assertEqual(len(canonical_games([home, other])), 2)
+        self.assertEqual(len(deduplicate_games([home, other])), 2)
 
 
 class SupersededEventTests(unittest.TestCase):
