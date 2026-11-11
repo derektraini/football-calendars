@@ -233,9 +233,9 @@ DESCRIPTION:Regular Season • Week 12\nAway\nVenue: SoFi Stadium\nTV/strea
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873105@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261111T233111Z
+LAST-MODIFIED:20261111T233111Z
+SEQUENCE:4
 SUMMARY:Buffalo Bills at New England Patriots
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,New England Patriots
@@ -244,8 +244,9 @@ DTEND:20261207T004000Z
 LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873105/bills-patriots
 DESCRIPTION:Regular Season • Week 13\nHome\nVenue: Gillette Stadium\nTV/s
- tream: CBS\nSource: https://www.espn.com/nfl/game/_/gameId/401873105/bills
- -patriots
+ tream: CBS\nNFL playoff picture (updated 2026-11-11):\nRecord: 5-4\nCurren
+ t playoff seed: No. 7 (provisional)\nSource: https://www.espn.com/nfl/game
+ /_/gameId/401873105/bills-patriots
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873109@local

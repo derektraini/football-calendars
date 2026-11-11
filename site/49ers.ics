@@ -233,9 +233,9 @@ DESCRIPTION:Regular Season • Week 12\nHome\nVenue: Levi's Stadium\nTV/str
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873095@local
-DTSTAMP:20261007T220500Z
-LAST-MODIFIED:20261007T220500Z
-SEQUENCE:4
+DTSTAMP:20261111T233111Z
+LAST-MODIFIED:20261111T233111Z
+SEQUENCE:5
 SUMMARY:San Francisco 49ers at New York Giants
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -244,8 +244,9 @@ DTEND:20261206T211500Z
 LOCATION:MetLife Stadium\, East Rutherford\, NJ\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873095/49ers-giants
 DESCRIPTION:Regular Season • Week 13\nAway\nVenue: MetLife Stadium\nTV/st
- ream: Fox\nSource: https://www.espn.com/nfl/game/_/gameId/401873095/49ers-
- giants
+ ream: Fox\nNFL playoff picture (updated 2026-11-11):\nRecord: 7-1\nCurrent
+  playoff seed: No. 1 (provisional)\nSource: https://www.espn.com/nfl/game/
+ _/gameId/401873095/49ers-giants
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873120@local

@@ -143,9 +143,9 @@ DESCRIPTION:Regular Season\nAway\nRankings: Ohio State #2\; USC Unranked (A
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-f1b30b5095bcff25@local
-DTSTAMP:20261104T224141Z
-LAST-MODIFIED:20261104T224141Z
-SEQUENCE:12
+DTSTAMP:20261111T233111Z
+LAST-MODIFIED:20261111T233111Z
+SEQUENCE:13
 SUMMARY:Oregon at Ohio State Buckeyes
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -153,8 +153,8 @@ DTSTART:20261107T203000Z
 DTEND:20261108T000000Z
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nTV/stream: CBS\nSour
- ce: https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nSource: https://ohio
+ statebuckeyes.com/sports/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-bf880981161a7fb0@local

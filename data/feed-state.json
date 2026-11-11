@@ -154,19 +154,19 @@
     "sequence": 6
   },
   "football-calendar-college-football-osu-f1b30b5095bcff25@local": {
-    "fingerprint": "7021e8d2724d59fd158ffe6d3f2a614b11010162d9f92a5778af27b6fc4fce49",
+    "fingerprint": "c72930091d39b23c913d8fc511ce05777d953155648328452b4e1e40089d8142",
     "identity": {
       "opponent": "oregon",
       "season": 2026
     },
-    "modified": "20261104T224141Z",
+    "modified": "20261111T233111Z",
     "ranking_snapshot": {
       "opponent_rank": null,
       "rank": null,
       "rank_source": null
     },
     "schedule_id": "osu-f1b30b5095bcff25",
-    "sequence": 12
+    "sequence": 13
   },
   "football-calendar-nfl-401872656@local": {
     "fingerprint": "1ffe6599cc85bd64d46fbc50789889595285c7b0a05ad2ba8c896ba61175cb13",
@@ -279,14 +279,14 @@
     "sequence": 3
   },
   "football-calendar-nfl-401873095@local": {
-    "fingerprint": "24ba1d8678612d45f7a50ec3e71c275361fc1b9664cc0fe9cb3c0e2748390944",
-    "modified": "20261007T220500Z",
-    "sequence": 4
+    "fingerprint": "0ec0059bb7015fdd5610ef948e1db087fc56494ad20d31836d2ed9ba981f1c87",
+    "modified": "20261111T233111Z",
+    "sequence": 5
   },
   "football-calendar-nfl-401873105@local": {
-    "fingerprint": "a9deeab3b8f5d55acbfe8af46e08acb0dd20434b7bce1a9cdb6f6078ad4ce9a7",
-    "modified": "20260916T213036Z",
-    "sequence": 3
+    "fingerprint": "efd1e8c80df03ab87e817eaf84808b15413691061d587cce7a5eaaf7362716eb",
+    "modified": "20261111T233111Z",
+    "sequence": 4
   },
   "football-calendar-nfl-401873109@local": {
     "fingerprint": "2d5c99cfd23eff4f2b36894a19aa3e47c324c74488a1ca4f6044907113dfed28",
