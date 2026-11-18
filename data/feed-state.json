@@ -87,34 +87,34 @@
     "sequence": 7
   },
   "football-calendar-college-football-osu-b255b9b28bfe855f@local": {
-    "fingerprint": "5e3c060eb4d9f4c2e74a637d7821b888e226fa5380779e778c4b6430f8547b83",
+    "fingerprint": "7913f89669bdc5366ca43f11241d2bd9c882d1ea9ae0ff6c176e0b4f89305225",
     "identity": {
       "opponent": "nebraska",
       "season": 2026
     },
-    "modified": "20261104T224141Z",
+    "modified": "20261118T232558Z",
     "ranking_snapshot": {
       "opponent_rank": null,
       "rank": null,
       "rank_source": null
     },
     "schedule_id": "osu-b255b9b28bfe855f",
-    "sequence": 10
+    "sequence": 11
   },
   "football-calendar-college-football-osu-bf880981161a7fb0@local": {
-    "fingerprint": "a92b5eca8244c0c673a28f2c5eaf6b38d7a4f9e54e8eece7f6cd4e12d13ad85a",
+    "fingerprint": "cc18c1c392635d96ce7de8f36bf261a4dff583728aef30c498c048471b2c0273",
     "identity": {
       "opponent": "northwestern",
       "season": 2026
     },
-    "modified": "20261104T224141Z",
+    "modified": "20261118T232558Z",
     "ranking_snapshot": {
       "opponent_rank": null,
       "rank": null,
       "rank_source": null
     },
     "schedule_id": "osu-bf880981161a7fb0",
-    "sequence": 10
+    "sequence": 11
   },
   "football-calendar-college-football-osu-c0476526b70fb978@local": {
     "fingerprint": "1b742026ada3905a94c328ade6e4520f7f5c8c0eaf21ba561580139a29d56d24",
@@ -274,29 +274,29 @@
     "sequence": 4
   },
   "football-calendar-nfl-401873093@local": {
-    "fingerprint": "333d14ff6df0957663e697dce0446750b2e1f7d7f3c3ad5c73f9882aa2dd8ee9",
-    "modified": "20260916T213036Z",
-    "sequence": 3
+    "fingerprint": "f9668314b7f7221077d40b8862291206570e9a7a3e93c0cafbc8b8e9a0991aa1",
+    "modified": "20261118T232558Z",
+    "sequence": 4
   },
   "football-calendar-nfl-401873095@local": {
-    "fingerprint": "0ec0059bb7015fdd5610ef948e1db087fc56494ad20d31836d2ed9ba981f1c87",
-    "modified": "20261111T233111Z",
-    "sequence": 5
+    "fingerprint": "406bbe899a7769bca056064edcc5142392011e9e2374fd957d45b44f27414a98",
+    "modified": "20261118T232558Z",
+    "sequence": 6
   },
   "football-calendar-nfl-401873105@local": {
-    "fingerprint": "efd1e8c80df03ab87e817eaf84808b15413691061d587cce7a5eaaf7362716eb",
-    "modified": "20261111T233111Z",
-    "sequence": 4
+    "fingerprint": "da41dae862eab36a23fa39a4bfb6fa677e4d21b93364516d2a64525758466c8c",
+    "modified": "20261118T232558Z",
+    "sequence": 5
   },
   "football-calendar-nfl-401873109@local": {
-    "fingerprint": "2d5c99cfd23eff4f2b36894a19aa3e47c324c74488a1ca4f6044907113dfed28",
-    "modified": "20260916T213036Z",
-    "sequence": 3
+    "fingerprint": "0c051e2c31c79406485dac0c25f6bb28f4e7f4c811f559f320e91b5043702c41",
+    "modified": "20261118T232558Z",
+    "sequence": 4
   },
   "football-calendar-nfl-401873120@local": {
-    "fingerprint": "7eeb85b3a5c3e27eeb27e1619fd742355b16b7bfc295bdac1df67fc1348cce26",
-    "modified": "20261007T220500Z",
-    "sequence": 4
+    "fingerprint": "dd5c08bd5ee8e84b28f9bc12fcca400dc07ff9dcc2d41398507fb6074b0aae36",
+    "modified": "20261118T232558Z",
+    "sequence": 5
   },
   "football-calendar-nfl-401873124@local": {
     "fingerprint": "715d1a002553a42d12db5cbf18bc4c0c2ca978a32e515f9656222891aa22c081",

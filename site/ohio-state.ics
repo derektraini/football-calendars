@@ -158,9 +158,9 @@ DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nSource: https://ohio
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-bf880981161a7fb0@local
-DTSTAMP:20261104T224141Z
-LAST-MODIFIED:20261104T224141Z
-SEQUENCE:10
+DTSTAMP:20261118T232558Z
+LAST-MODIFIED:20261118T232558Z
+SEQUENCE:11
 SUMMARY:Northwestern at Ohio State Buckeyes
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -168,24 +168,23 @@ DTSTART:20261114T170000Z
 DTEND:20261114T203000Z
 LOCATION:Ohio Stadium\, Columbus\, Ohio
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nTV/stream: FOX\, Fox
-  One\nSource: https://ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nSource: https://ohio
+ statebuckeyes.com/sports/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-b255b9b28bfe855f@local
-DTSTAMP:20261104T224141Z
-LAST-MODIFIED:20261104T224141Z
-SEQUENCE:10
-SUMMARY:Ohio State Buckeyes at Nebraska — Kickoff TBD
+DTSTAMP:20261118T232558Z
+LAST-MODIFIED:20261118T232558Z
+SEQUENCE:11
+SUMMARY:Ohio State Buckeyes at Nebraska
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
-DTSTART;VALUE=DATE:20261121
-DTEND;VALUE=DATE:20261122
+DTSTART:20261121T170000Z
+DTEND:20261121T203000Z
 LOCATION:Lincoln\, Neb.
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nKickoff is not confirmed\; this all-day p
- laceholder will become a timed event when announced.\nSource: https://ohio
- statebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nAway\nTV/stream: FOX\, Fox One\nSource: https:/
+ /ohiostatebuckeyes.com/sports/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-7758fb4b98f39a2a@local
