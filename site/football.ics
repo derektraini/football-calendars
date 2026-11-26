@@ -572,9 +572,9 @@ DESCRIPTION:Regular Season • Week 10\nAway\nVenue: AT&T Stadium\nTV/strea
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-b255b9b28bfe855f@local
-DTSTAMP:20261118T232558Z
-LAST-MODIFIED:20261118T232558Z
-SEQUENCE:11
+DTSTAMP:20261126T010157Z
+LAST-MODIFIED:20261126T010157Z
+SEQUENCE:12
 SUMMARY:Ohio State Buckeyes at Nebraska
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -582,8 +582,8 @@ DTSTART:20261121T170000Z
 DTEND:20261121T203000Z
 LOCATION:Lincoln\, Neb.
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nTV/stream: FOX\, Fox One\nSource: https:/
- /ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nAway\nSource: https://ohiostatebuckeyes.com/spo
+ rts/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873077@local
@@ -650,9 +650,9 @@ DESCRIPTION:Regular Season • Week 12\nAway\nVenue: SoFi Stadium\nTV/strea
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873095@local
-DTSTAMP:20261118T232558Z
-LAST-MODIFIED:20261118T232558Z
-SEQUENCE:6
+DTSTAMP:20261126T010157Z
+LAST-MODIFIED:20261126T010157Z
+SEQUENCE:7
 SUMMARY:San Francisco 49ers at New York Giants
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -661,15 +661,15 @@ DTEND:20261206T211500Z
 LOCATION:MetLife Stadium\, East Rutherford\, NJ\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873095/49ers-giants
 DESCRIPTION:Regular Season • Week 13\nAway\nVenue: MetLife Stadium\nTV/st
- ream: Fox\nNFL playoff picture (updated 2026-11-18):\nRecord: 8-1\nCurrent
+ ream: Fox\nNFL playoff picture (updated 2026-11-25):\nRecord: 9-1\nCurrent
   playoff seed: No. 1 (provisional)\nSource: https://www.espn.com/nfl/game/
  _/gameId/401873095/49ers-giants
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873105@local
-DTSTAMP:20261118T232558Z
-LAST-MODIFIED:20261118T232558Z
-SEQUENCE:5
+DTSTAMP:20261126T010157Z
+LAST-MODIFIED:20261126T010157Z
+SEQUENCE:6
 SUMMARY:Buffalo Bills at New England Patriots
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,New England Patriots
@@ -678,15 +678,15 @@ DTEND:20261207T004000Z
 LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873105/bills-patriots
 DESCRIPTION:Regular Season • Week 13\nHome\nVenue: Gillette Stadium\nTV/s
- tream: CBS\nNFL playoff picture (updated 2026-11-18):\nRecord: 5-5\nCurren
+ tream: CBS\nNFL playoff picture (updated 2026-11-25):\nRecord: 5-5\nCurren
  t playoff seed: No. 8 (provisional)\nSource: https://www.espn.com/nfl/game
  /_/gameId/401873105/bills-patriots
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873109@local
-DTSTAMP:20261118T232558Z
-LAST-MODIFIED:20261118T232558Z
-SEQUENCE:4
+DTSTAMP:20261126T010157Z
+LAST-MODIFIED:20261126T010157Z
+SEQUENCE:5
 SUMMARY:Minnesota Vikings at New England Patriots
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,New England Patriots
@@ -695,15 +695,15 @@ DTEND:20261211T043000Z
 LOCATION:Gillette Stadium\, Foxborough\, MA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873109/vikings-patriots
 DESCRIPTION:Regular Season • Week 14\nHome\nVenue: Gillette Stadium\nTV/s
- tream: Prime Video\nNFL playoff picture (updated 2026-11-18):\nRecord: 5-5
+ tream: Prime Video\nNFL playoff picture (updated 2026-11-25):\nRecord: 5-5
  \nCurrent playoff seed: No. 8 (provisional)\nSource: https://www.espn.com/
  nfl/game/_/gameId/401873109/vikings-patriots
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873120@local
-DTSTAMP:20261118T232558Z
-LAST-MODIFIED:20261118T232558Z
-SEQUENCE:5
+DTSTAMP:20261126T010157Z
+LAST-MODIFIED:20261126T010157Z
+SEQUENCE:6
 SUMMARY:Los Angeles Rams at San Francisco 49ers
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -712,15 +712,15 @@ DTEND:20261214T004000Z
 LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873120/rams-49ers
 DESCRIPTION:Regular Season • Week 14\nHome\nVenue: Levi's Stadium\nTV/str
- eam: Fox\nNFL playoff picture (updated 2026-11-18):\nRecord: 8-1\nCurrent 
+ eam: Fox\nNFL playoff picture (updated 2026-11-25):\nRecord: 9-1\nCurrent 
  playoff seed: No. 1 (provisional)\nSource: https://www.espn.com/nfl/game/_
  /gameId/401873120/rams-49ers
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873124@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261126T010157Z
+LAST-MODIFIED:20261126T010157Z
+SEQUENCE:4
 SUMMARY:San Francisco 49ers at Los Angeles Chargers
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -729,14 +729,15 @@ DTEND:20261218T043000Z
 LOCATION:SoFi Stadium\, Inglewood\, CA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873124/49ers-chargers
 DESCRIPTION:Regular Season • Week 15\nAway\nVenue: SoFi Stadium\nTV/strea
- m: Prime Video\nSource: https://www.espn.com/nfl/game/_/gameId/401873124/4
- 9ers-chargers
+ m: Prime Video\nNFL playoff picture (updated 2026-11-25):\nRecord: 9-1\nCu
+ rrent playoff seed: No. 1 (provisional)\nSource: https://www.espn.com/nfl/
+ game/_/gameId/401873124/49ers-chargers
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873139@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:4
+DTSTAMP:20261126T010157Z
+LAST-MODIFIED:20261126T010157Z
+SEQUENCE:5
 SUMMARY:New England Patriots at Kansas City Chiefs
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,New England Patriots
@@ -745,8 +746,9 @@ DTEND:20261222T043000Z
 LOCATION:Arrowhead Stadium\, Kansas City\, MO\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873139/patriots-chiefs
 DESCRIPTION:Regular Season • Week 15\nAway\nVenue: Arrowhead Stadium\nTV/
- stream: ESPN\, ABC\nSource: https://www.espn.com/nfl/game/_/gameId/4018731
- 39/patriots-chiefs
+ stream: ESPN\, ABC\nNFL playoff picture (updated 2026-11-25):\nRecord: 5-5
+ \nCurrent playoff seed: No. 8 (provisional)\nSource: https://www.espn.com/
+ nfl/game/_/gameId/401873139/patriots-chiefs
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873151@local

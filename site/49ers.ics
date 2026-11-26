@@ -233,9 +233,9 @@ DESCRIPTION:Regular Season • Week 12\nHome\nVenue: Levi's Stadium\nTV/str
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873095@local
-DTSTAMP:20261118T232558Z
-LAST-MODIFIED:20261118T232558Z
-SEQUENCE:6
+DTSTAMP:20261126T010157Z
+LAST-MODIFIED:20261126T010157Z
+SEQUENCE:7
 SUMMARY:San Francisco 49ers at New York Giants
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -244,15 +244,15 @@ DTEND:20261206T211500Z
 LOCATION:MetLife Stadium\, East Rutherford\, NJ\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873095/49ers-giants
 DESCRIPTION:Regular Season • Week 13\nAway\nVenue: MetLife Stadium\nTV/st
- ream: Fox\nNFL playoff picture (updated 2026-11-18):\nRecord: 8-1\nCurrent
+ ream: Fox\nNFL playoff picture (updated 2026-11-25):\nRecord: 9-1\nCurrent
   playoff seed: No. 1 (provisional)\nSource: https://www.espn.com/nfl/game/
  _/gameId/401873095/49ers-giants
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873120@local
-DTSTAMP:20261118T232558Z
-LAST-MODIFIED:20261118T232558Z
-SEQUENCE:5
+DTSTAMP:20261126T010157Z
+LAST-MODIFIED:20261126T010157Z
+SEQUENCE:6
 SUMMARY:Los Angeles Rams at San Francisco 49ers
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -261,15 +261,15 @@ DTEND:20261214T004000Z
 LOCATION:Levi's Stadium\, Santa Clara\, CA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873120/rams-49ers
 DESCRIPTION:Regular Season • Week 14\nHome\nVenue: Levi's Stadium\nTV/str
- eam: Fox\nNFL playoff picture (updated 2026-11-18):\nRecord: 8-1\nCurrent 
+ eam: Fox\nNFL playoff picture (updated 2026-11-25):\nRecord: 9-1\nCurrent 
  playoff seed: No. 1 (provisional)\nSource: https://www.espn.com/nfl/game/_
  /gameId/401873120/rams-49ers
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873124@local
-DTSTAMP:20260916T213036Z
-LAST-MODIFIED:20260916T213036Z
-SEQUENCE:3
+DTSTAMP:20261126T010157Z
+LAST-MODIFIED:20261126T010157Z
+SEQUENCE:4
 SUMMARY:San Francisco 49ers at Los Angeles Chargers
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,nfl\,San Francisco 49ers
@@ -278,8 +278,9 @@ DTEND:20261218T043000Z
 LOCATION:SoFi Stadium\, Inglewood\, CA\, USA
 URL:https://www.espn.com/nfl/game/_/gameId/401873124/49ers-chargers
 DESCRIPTION:Regular Season • Week 15\nAway\nVenue: SoFi Stadium\nTV/strea
- m: Prime Video\nSource: https://www.espn.com/nfl/game/_/gameId/401873124/4
- 9ers-chargers
+ m: Prime Video\nNFL playoff picture (updated 2026-11-25):\nRecord: 9-1\nCu
+ rrent playoff seed: No. 1 (provisional)\nSource: https://www.espn.com/nfl/
+ game/_/gameId/401873124/49ers-chargers
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-nfl-401873153@local

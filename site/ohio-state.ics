@@ -173,9 +173,9 @@ DESCRIPTION:Regular Season\nHome\nVenue: Ohio Stadium\nSource: https://ohio
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-b255b9b28bfe855f@local
-DTSTAMP:20261118T232558Z
-LAST-MODIFIED:20261118T232558Z
-SEQUENCE:11
+DTSTAMP:20261126T010157Z
+LAST-MODIFIED:20261126T010157Z
+SEQUENCE:12
 SUMMARY:Ohio State Buckeyes at Nebraska
 TRANSP:TRANSPARENT
 CATEGORIES:Football\,college-football\,Ohio State Buckeyes
@@ -183,8 +183,8 @@ DTSTART:20261121T170000Z
 DTEND:20261121T203000Z
 LOCATION:Lincoln\, Neb.
 URL:https://ohiostatebuckeyes.com/sports/football/schedule/text
-DESCRIPTION:Regular Season\nAway\nTV/stream: FOX\, Fox One\nSource: https:/
- /ohiostatebuckeyes.com/sports/football/schedule/text
+DESCRIPTION:Regular Season\nAway\nSource: https://ohiostatebuckeyes.com/spo
+ rts/football/schedule/text
 END:VEVENT
 BEGIN:VEVENT
 UID:football-calendar-college-football-osu-7758fb4b98f39a2a@local

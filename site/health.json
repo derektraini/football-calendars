@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-18T23:25:58+00:00",
+  "generatedAt": "2026-11-26T01:01:57+00:00",
   "events": 52,
   "source": "live",
   "files": {
-    "ohio-state.ics": "e0001e3f860bd0a115498ef9c34e8e76db4e6cb2198021afb0400f28e18a8f0a",
-    "49ers.ics": "6893e4521ccece460a064611cfc7b7719652cff9b03038fcf52401581c6fcf07",
-    "patriots.ics": "c4e5b1d360c80b8873ce82d41ccc86852a73fc0113b0a3217e811728ad9b4184",
-    "football.ics": "e1db3d1d5986c1f61eacbfedf50b5824d5c20721f6d7e957225ae5cb186f033c"
+    "ohio-state.ics": "9bc57f0be48d096ec198ebba5e4ace4a55009dd5c7eb3f4ce499c84007570daa",
+    "49ers.ics": "4d19806c2730311bd72a1a0f43dbd81d36a33400a31395377fce127e2067241f",
+    "patriots.ics": "0d828f6af31c77d66105b73d12e5f0b98074b4e6afc72137418333728b876321",
+    "football.ics": "7e09ae9e860603abea8e6654e7113fbb374a05b977e1e7d2818397f74d2949d8"
   }
 }
